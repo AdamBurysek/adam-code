@@ -1,0 +1,16 @@
+@font-face {
+  font-family: "SF-Pro";
+  src: url("./fonts/SF-Pro.ttf") format("truetype");
+}
+
+:root {
+  --color-black: #000;
+  --color-white: #fff;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  font-family: "SF-Pro", sans-serif;
+}
