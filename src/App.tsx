@@ -2,6 +2,12 @@ import "./App.css";
 import { APLogo, CzechFlag } from "./assets/icons";
 import HamburgerButton from "./components/hamburgerButton";
 import GitHubIcon from "./images/github-mark-white.png";
+import Hero1 from "./images/heroParallax/Hero-1.png";
+import Hero2 from "./images/heroParallax/Hero-2.png";
+import Hero3 from "./images/heroParallax/Hero-3.png";
+import Hero4 from "./images/heroParallax/Hero-4.png";
+import Hero5 from "./images/heroParallax/Hero-5.png";
+import Hero6 from "./images/heroParallax/Hero-6.png";
 
 function App() {
   return (
@@ -39,6 +45,14 @@ function App() {
           </ul>
         </div>
       </nav>
+      <div className="container hero_img-container">
+        <img src={Hero1}></img>
+        <img src={Hero2}></img>
+        <img src={Hero3}></img>
+        <img src={Hero4}></img>
+        <img src={Hero5}></img>
+        <img src={Hero6}></img>
+      </div>
       <div className="container">
         <div style={{ fontSize: 60 }}>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla
@@ -153,7 +167,10 @@ function App() {
           voluptates quod deserunt dolorum vero ad? Recusandae labore fuga illum
           a voluptate, quae similique itaque dolorem, minus ex, qui dolor eaque.
         </div>
-        <div style={{ fontSize: 60, paddingTop: "80px" }} id="test">
+        <div
+          style={{ fontSize: 60, paddingTop: "80px" }}
+          id="test"
+        >
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla
           placeat, laboriosam error maiores in recusandae aperiam molestiae
           ipsum sed adipisci est obcaecati explicabo, ullam ipsa officiis sint
