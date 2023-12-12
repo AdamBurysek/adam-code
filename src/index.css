@@ -3,6 +3,10 @@
   src: url("./fonts/SF-Pro.ttf") format("truetype");
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --color-black: #000;
   --color-white: #fff;

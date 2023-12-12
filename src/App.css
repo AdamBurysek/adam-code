@@ -39,11 +39,15 @@ ul {
   align-items: center;
 }
 
-.navbar_links > li {
+.navbar_links li {
   padding-right: 25px;
   font-size: 16px;
-
   font-weight: 200;
+}
+
+.navbar_links a {
+  text-decoration: none;
+  color: var(--color-white);
 }
 
 @media screen and (max-width: 880px) {
