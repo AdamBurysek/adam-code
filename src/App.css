@@ -69,6 +69,7 @@ ul {
   display: grid;
   grid-template-areas: "stack";
   height: 100vh;
+  max-height: 1300px;
   overflow: hidden;
   position: relative;
   z-index: 10;
@@ -79,7 +80,32 @@ ul {
   position: absolute;
   bottom: 0;
   right: 0;
+  transition: all 0.01s;
+  z-index: 5;
 }
 
-.test {
+@media screen and (max-width: 400px) {
+  .hero_img-container img {
+    right: -250px;
+  }
+}
+
+.translate-down {
+  translate: 0 10px;
+}
+
+.parallax-text {
+  position: absolute;
+  font-size: 100px;
+  font-weight: 200;
+  right: 35%;
+  bottom: 550px;
+  color: var(--color-white);
+  z-index: 100;
+  z-index: 2;
+  transition: all 2s;
+}
+
+.parallax-text_hide {
+  bottom: -250px;
 }

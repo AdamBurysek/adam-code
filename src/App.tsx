@@ -1,3 +1,4 @@
+import { useRef, useState } from "react";
 import "./App.css";
 import { APLogo, CzechFlag } from "./assets/icons";
 import HamburgerButton from "./components/hamburgerButton";
@@ -8,50 +9,97 @@ import Hero3 from "./images/heroParallax/Hero-3.png";
 import Hero4 from "./images/heroParallax/Hero-4.png";
 import Hero5 from "./images/heroParallax/Hero-5.png";
 import Hero6 from "./images/heroParallax/Hero-6.png";
+import {
+  motion,
+  useMotionValueEvent,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 
 function App() {
+  const [hideHeaderText, setHideHeaderText] = useState(false);
+
+  const pageRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: pageRef,
+    offset: ["start start", "end start"],
+  });
+
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    if (latest !== 0) {
+      setHideHeaderText(true);
+    }
+    if (latest === 0) {
+      setHideHeaderText(false);
+    }
+  });
+
+  const hero1 = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const hero2 = useTransform(scrollYProgress, [0, 1], ["0%", "130%"]);
+  const hero3 = useTransform(scrollYProgress, [0, 1], ["0%", "120%"]);
+  const hero4 = useTransform(scrollYProgress, [0, 1], ["0%", "110%"]);
+  const hero5 = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+
   return (
     <>
-      <nav className="navbar">
-        <div className="container">
-          <HamburgerButton />
-          <span className="navbar_logo">
-            <APLogo />
-            <p>Adam Code</p>
-          </span>
-          <ul className="navbar_links">
-            <li>
-              <a href="#">Home</a>
-            </li>
-            <li>
-              <a href="#test">About Me</a>
-            </li>
-            <li>My Skillz</li>
-            <li>My Projects</li>
-            <li>Contact</li>
-            <img
-              src={GitHubIcon}
-              style={{
-                width: "25px",
-                height: "25px",
-                paddingTop: "1.5px",
-                marginRight: "26px",
-                marginLeft: "20px",
-              }}
-            />
-            <span style={{ marginRight: "20px" }}>
-              <CzechFlag />
+      <div ref={pageRef}>
+        <nav className="navbar">
+          <div className="container">
+            <HamburgerButton />
+            <span className="navbar_logo">
+              <APLogo />
+              <p>Adam Code</p>
             </span>
-          </ul>
+            <ul className="navbar_links">
+              <li>
+                <a href="#">Home</a>
+              </li>
+              <li>
+                <a href="#test">About Me</a>
+              </li>
+              <li>My Skillz</li>
+              <li>My Projects</li>
+              <li>Contact</li>
+              <img
+                src={GitHubIcon}
+                style={{
+                  width: "25px",
+                  height: "25px",
+                  paddingTop: "1.5px",
+                  marginRight: "26px",
+                  marginLeft: "20px",
+                }}
+              />
+              <span style={{ marginRight: "20px" }}>
+                <CzechFlag />
+              </span>
+            </ul>
+          </div>
+        </nav>
+        <div className="container hero_img-container">
+          <motion.img
+            src={Hero1}
+            style={{ y: hero1, translateY: "-80px", zIndex: 0 }}
+          />
+          <p
+            className={
+              hideHeaderText
+                ? "parallax-text parallax-text_hide"
+                : "parallax-text"
+            }
+          >
+            Hello World
+          </p>
+          <motion.img src={Hero2} style={{ y: hero2, translateY: "30px" }} />
+          <motion.img
+            src={Hero3}
+            style={{ y: hero3, translateY: "20px" }}
+            className="instet"
+          />
+          <motion.img src={Hero4} style={{ y: hero4, translateY: "10px" }} />
+          <motion.img src={Hero5} style={{ y: hero5 }} />
+          <motion.img src={Hero6} />
         </div>
-      </nav>
-      <div className="container hero_img-container">
-        <img src={Hero1}></img>
-        <img src={Hero2}></img>
-        <img src={Hero3}></img>
-        <img src={Hero4}></img>
-        <img src={Hero5}></img>
-        <img src={Hero6}></img>
       </div>
       <div className="container">
         <div style={{ fontSize: 60 }}>
@@ -167,10 +215,7 @@ function App() {
           voluptates quod deserunt dolorum vero ad? Recusandae labore fuga illum
           a voluptate, quae similique itaque dolorem, minus ex, qui dolor eaque.
         </div>
-        <div
-          style={{ fontSize: 60, paddingTop: "80px" }}
-          id="test"
-        >
+        <div style={{ fontSize: 60, paddingTop: "80px" }} id="test">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla
           placeat, laboriosam error maiores in recusandae aperiam molestiae
           ipsum sed adipisci est obcaecati explicabo, ullam ipsa officiis sint
