@@ -68,7 +68,7 @@ ul {
 .hero_img-container {
   display: grid;
   grid-template-areas: "stack";
-  height: 100vh;
+  height: 100svh;
   max-height: 1300px;
   overflow: hidden;
   position: relative;
@@ -95,6 +95,7 @@ ul {
 }
 
 .parallax-text {
+  display: none;
   position: absolute;
   font-size: 100px;
   font-weight: 200;
@@ -108,4 +109,16 @@ ul {
 
 .parallax-text_hide {
   bottom: -250px;
+}
+
+@media screen and (min-width: 800px) and (min-height: 850px) {
+  .parallax-text {
+    display: block;
+  }
+}
+
+.cloud {
+  position: relative;
+  width: 500px;
+  top: -20vh;
 }
