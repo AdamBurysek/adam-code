@@ -122,3 +122,10 @@ ul {
   width: 500px;
   top: -20vh;
 }
+
+.line {
+  width: 100%;
+  max-width: 1780px;
+  height: 3px;
+  background-color: white;
+}

@@ -1,61 +1,21 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import { APLogo, CzechFlag } from "../assets/icons";
 import withLoading from "../hooks/withLoading";
 import HamburgerButton from "../components/hamburgerButton";
 import GitHubIcon from "../images/github-mark-white.png";
-import Hero1 from "../images/heroParallax/Hero-1.webp";
-import Hero2 from "../images/heroParallax/Hero-2.webp";
-import Hero3 from "../images/heroParallax/Hero-3.webp";
-import Hero4 from "../images/heroParallax/Hero-4.webp";
-import Hero5 from "../images/heroParallax/Hero-5.webp";
-import Hero6 from "../images/heroParallax/Hero-6.webp";
-import Cloud from "../images/Cloud.png";
-import {
-  animate,
-  motion,
-  useMotionValueEvent,
-  useScroll,
-  useTransform,
-} from "framer-motion";
+
+import { useScroll } from "framer-motion";
+import Hero from "./hero";
 
 function MainPage() {
-  const [hideHeaderText, setHideHeaderText] = useState(false);
+  console.log("rerender");
 
   const pageRef = useRef(null);
-  const cloudRef = useRef(null);
 
   const { scrollYProgress } = useScroll({
     target: pageRef,
     offset: ["start start", "end start"],
   });
-
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    if (latest !== 0) {
-      setHideHeaderText(true);
-    }
-    if (latest === 0) {
-      setHideHeaderText(false);
-    }
-  });
-
-  useEffect(() => {
-    animate(
-      cloudRef.current,
-      {
-        x: [-1600, 1800],
-        width: [700, 1700],
-        rotate: [0, 60],
-      },
-      { duration: 200, repeatType: "loop", repeat: 100 }
-    );
-  }, []);
-
-  const background = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
-  const orangeMountains = useTransform(scrollYProgress, [0, 1], ["0%", "130%"]);
-  const pinkMountains = useTransform(scrollYProgress, [0, 1], ["0%", "120%"]);
-  const redMountains = useTransform(scrollYProgress, [0, 1], ["0%", "110%"]);
-  const purpleMountains = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
-  const clouds = useTransform(scrollYProgress, [0, 1], ["0%", "200%"]);
 
   return (
     <>
@@ -93,44 +53,10 @@ function MainPage() {
             </ul>
           </div>
         </nav>
-        <div className="container hero_img-container">
-          <motion.img
-            src={Hero1}
-            style={{ y: background, translateY: "-80px", zIndex: 0 }}
-          />
-          <p
-            className={
-              hideHeaderText
-                ? "parallax-text parallax-text_hide"
-                : "parallax-text"
-            }
-          >
-            Hello World
-          </p>
-          <motion.img
-            src={Hero2}
-            style={{ y: orangeMountains, translateY: "30px" }}
-          />
-          <motion.img
-            className="cloud"
-            src={Cloud}
-            ref={cloudRef}
-            style={{ y: clouds, translateY: "20px" }}
-          />
-          <motion.img
-            src={Hero3}
-            style={{ y: pinkMountains, translateY: "20px" }}
-            className="instet"
-          />
-          <motion.img
-            src={Hero4}
-            style={{ y: redMountains, translateY: "10px" }}
-          />
-          <motion.img src={Hero5} style={{ y: purpleMountains }} />
-          <motion.img src={Hero6} />
-        </div>
+        <Hero scrollYProgress={scrollYProgress} />
       </div>
       <div className="container">
+        <div className="line" />
         <div style={{ fontSize: 60 }}>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla
           placeat, laboriosam error maiores in recusandae aperiam molestiae

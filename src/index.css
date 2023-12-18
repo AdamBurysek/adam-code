@@ -3,6 +3,11 @@
   src: url("./fonts/SF-Pro.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "SF-Pro-Thin";
+  src: url("./fonts/SF-Pro-Display-Thin.woff2") format("woff2");
+}
+
 html {
   scroll-behavior: smooth;
   scroll-margin: 30px;
