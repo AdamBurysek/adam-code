@@ -1,15 +1,12 @@
 import { useRef } from "react";
-import { APLogo, CzechFlag } from "../assets/icons";
+
 import withLoading from "../hooks/withLoading";
-import HamburgerButton from "../components/hamburgerButton";
-import GitHubIcon from "../images/github-mark-white.png";
 
 import { useScroll } from "framer-motion";
 import Hero from "./hero";
+import Navbar from "./navbar";
 
-function MainPage() {
-  console.log("rerender");
-
+function MainPage(props: any) {
   const pageRef = useRef(null);
 
   const { scrollYProgress } = useScroll({
@@ -20,39 +17,10 @@ function MainPage() {
   return (
     <>
       <div ref={pageRef}>
-        <nav className="navbar">
-          <div className="container">
-            <HamburgerButton />
-            <span className="navbar_logo">
-              <APLogo />
-              <p>Adam Code</p>
-            </span>
-            <ul className="navbar_links">
-              <li>
-                <a href="#">Home</a>
-              </li>
-              <li>
-                <a href="#test">About Me</a>
-              </li>
-              <li>My Skillz</li>
-              <li>My Projects</li>
-              <li>Contact</li>
-              <img
-                src={GitHubIcon}
-                style={{
-                  width: "25px",
-                  height: "25px",
-                  paddingTop: "1.5px",
-                  marginRight: "26px",
-                  marginLeft: "20px",
-                }}
-              />
-              <span style={{ marginRight: "20px" }}>
-                <CzechFlag />
-              </span>
-            </ul>
-          </div>
-        </nav>
+        <Navbar
+          language={props.language}
+          handleLanguageButtonClick={props.handleLanguageButtonClick}
+        />
         <Hero scrollYProgress={scrollYProgress} />
       </div>
       <div className="container">

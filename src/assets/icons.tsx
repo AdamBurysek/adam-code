@@ -61,8 +61,8 @@ export const EnglishFlag: React.FC = () => {
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="40"
-        height="30"
-        viewBox="0 0 114 73"
+        height="36"
+        viewBox="0 0 115 60"
         fill="none"
       >
         <path d="M0 0H113.794V73H0V0Z" fill="#012169" />
