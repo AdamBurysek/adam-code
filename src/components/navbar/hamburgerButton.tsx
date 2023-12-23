@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./hamburgerButton.css";
 
 const HamburgerButton = (props: any) => {

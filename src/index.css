@@ -24,3 +24,30 @@ body {
 body a {
   text-decoration: none;
 }
+
+h1 {
+  color: var(--color-white);
+  font-size: 64px;
+  font-weight: 510;
+  text-align: center;
+  margin: 50px;
+}
+
+p {
+  font-weight: 10;
+  color: var(--color-white);
+  font-size: 24px;
+}
+
+section {
+  min-height: 100svh;
+  max-height: 1300px;
+}
+
+.page-content {
+  transition: filter 0.8s linear;
+
+  &.blur {
+    filter: blur(15px);
+  }
+}

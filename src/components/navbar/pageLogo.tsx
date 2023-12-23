@@ -1,4 +1,4 @@
-import { APLogo } from "../assets/icons";
+import { APLogo } from "../../assets/icons";
 
 const PageLogo = () => {
   return (
