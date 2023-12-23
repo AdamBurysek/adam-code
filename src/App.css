@@ -206,11 +206,6 @@ ul {
 
 /* About Me */
 
-.about-me_title {
-  /* padding-top: 10vh;
-  padding-bottom: 8vh; */
-}
-
 .about-me_content {
   display: flex;
   flex-direction: column;
@@ -220,9 +215,24 @@ ul {
 .about-me_picture {
   width: 80vw;
   max-width: 400px;
-  /* width: 400px;
-  height: 400px;
-  padding-right: 150px; */
+}
+
+.about-me_content p {
+  padding: 38px;
+}
+
+@media screen and (min-width: 1025px) {
+  .about-me_content {
+    flex-direction: row;
+    padding: 0 5vw;
+    gap: 100px;
+  }
+}
+
+@media screen and (min-width: 1420px) {
+  .about-me_content {
+    padding: 0 15vw;
+  }
 }
 
 @media screen and (min-width: 1780px) {

@@ -27,16 +27,25 @@ body a {
 
 h1 {
   color: var(--color-white);
-  font-size: 64px;
+  font-size: 48px;
   font-weight: 510;
   text-align: center;
   margin: 50px;
 }
 
 p {
-  font-weight: 10;
+  font-weight: 100;
   color: var(--color-white);
-  font-size: 24px;
+  font-size: 18px;
+}
+
+@media screen and (min-width: 440px) {
+  h1 {
+    font-size: 64px;
+  }
+  p {
+    font-size: 24px;
+  }
 }
 
 section {
@@ -45,7 +54,7 @@ section {
 }
 
 .page-content {
-  transition: filter 0.8s linear;
+  transition: filter 0.6s linear;
 
   &.blur {
     filter: blur(15px);

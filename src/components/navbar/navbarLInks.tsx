@@ -4,7 +4,7 @@ import { CzechFlag, EnglishFlag } from "../../assets/icons";
 const NavbarLinks = (props: any) => {
   const navLinks = [
     { target: "home", textEn: "Home", textCz: "Domů" },
-    { target: "about-me", textEn: "About Me", textCz: "O mě" },
+    { target: "about-me", textEn: "About Me", textCz: "O mně" },
     { textEn: "My Skills", textCz: "Moje dovednosti" },
     { textEn: "My Projects", textCz: "Moje projekty" },
     { textEn: "Contact", textCz: "Kontakt" },
