@@ -1,4 +1,5 @@
-import AdamPicture from "../images/Adam.webp";
+import AdamPicture from "../../images/Adam.webp";
+import "./aboutMe.css";
 
 const AboutMe = (props: any) => {
   return (

@@ -1,8 +1,8 @@
 import { useState } from "react";
 import withLoading from "../hooks/withLoading";
-import Hero from "./hero";
+import Hero from "./hero/hero";
 import Navbar from "./navbar/navbar";
-import AboutMe from "./aboutMe";
+import AboutMe from "./aboutMe/aboutMe";
 
 function MainPage(props: any) {
   const [menuOpened, setMenuOpened] = useState<boolean>(false);

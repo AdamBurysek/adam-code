@@ -1,13 +1,14 @@
 import { useScroll } from "framer-motion";
-import Hero1 from "../images/heroParallax/Hero-1.webp";
-import Hero2 from "../images/heroParallax/Hero-2.webp";
-import Hero3 from "../images/heroParallax/Hero-3.webp";
-import Hero4 from "../images/heroParallax/Hero-4.webp";
-import Hero5 from "../images/heroParallax/Hero-5.webp";
-import Hero6 from "../images/heroParallax/Hero-6.webp";
+import Hero1 from "../../images/heroParallax/Hero-1.webp";
+import Hero2 from "../../images/heroParallax/Hero-2.webp";
+import Hero3 from "../../images/heroParallax/Hero-3.webp";
+import Hero4 from "../../images/heroParallax/Hero-4.webp";
+import Hero5 from "../../images/heroParallax/Hero-5.webp";
+import Hero6 from "../../images/heroParallax/Hero-6.webp";
 import { motion, useTransform } from "framer-motion";
 import HeroText from "./heroText";
 import { useRef } from "react";
+import "./hero.css";
 
 const Hero = () => {
   const pageRef = useRef(null);
