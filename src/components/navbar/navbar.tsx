@@ -25,7 +25,7 @@ const Navbar = (props: any) => {
           handleHamburgerButtonClick={props.handleHamburgerButtonClick}
           menuOpened={props.menuOpened}
         />
-        <PageLogo />
+        <PageLogo handleNavLinkButtonClick={handleNavLinkButtonClick} />
         <NavbarLinks
           language={props.language}
           handleLanguageButtonClick={props.handleLanguageButtonClick}

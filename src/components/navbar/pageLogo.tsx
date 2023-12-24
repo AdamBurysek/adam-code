@@ -1,8 +1,12 @@
 import { APLogo } from "../../assets/icons";
 
-const PageLogo = () => {
+const PageLogo = (props: any) => {
   return (
-    <a href="#" className="navbar_logo">
+    <a
+      onClick={props.handleNavLinkButtonClick}
+      data-target="home"
+      className="navbar_logo"
+    >
       <APLogo />
       <p>Adam Code</p>
     </a>

@@ -21,6 +21,7 @@
   user-select: none;
   padding: 0 12px;
   margin-left: 7px;
+  cursor: pointer;
 }
 
 .navbar_logo p {
@@ -69,6 +70,10 @@ ul {
   border: none;
   cursor: pointer;
   color: var(--color-white);
+}
+
+.navbar_links button:hover {
+  color: aqua;
 }
 
 .github-button {

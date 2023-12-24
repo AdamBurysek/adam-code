@@ -4,9 +4,9 @@ const NavbarLinks = (props: any) => {
   const navLinks = [
     { target: "home", textEn: "Home", textCz: "Domů" },
     { target: "about-me", textEn: "About Me", textCz: "O mně" },
-    { textEn: "My Skills", textCz: "Moje dovednosti" },
-    { textEn: "My Projects", textCz: "Moje projekty" },
-    { textEn: "Contact", textCz: "Kontakt" },
+    { target: "my-skillz", textEn: "My Skills", textCz: "Moje dovednosti" },
+    { target: "my-projects", textEn: "My Projects", textCz: "Moje projekty" },
+    { target: "contact", textEn: "Contact", textCz: "Kontakt" },
   ];
 
   return (
@@ -27,11 +27,8 @@ const NavbarLinks = (props: any) => {
         target="blank"
         onClick={() => props.setMenuOpened(false)}
       >
-        <span className="github-icon">
-          <GitHubIcon />
-        </span>
+        <GitHubIcon />
       </a>
-
       <button
         className={
           props.menuOpened
@@ -40,7 +37,7 @@ const NavbarLinks = (props: any) => {
         }
         onClick={props.handleLanguageButtonClick}
       >
-        {props.language === "en" ? <EnglishFlag /> : <CzechFlag />}
+        {props.language === "en" ? <CzechFlag /> : <EnglishFlag />}
       </button>
     </ul>
   );
