@@ -43,7 +43,10 @@ const withLoading = <P extends object>(
     return (
       <div>
         {loading ? <Loading /> : null}
-        <WrappedComponent {...props} />
+
+        <div className={loading ? "hide-content" : ""}>
+          <WrappedComponent {...props} />
+        </div>
       </div>
     );
   };

@@ -1,6 +1,7 @@
 import PageLogo from "./pageLogo";
 import NavbarLinks from "./navbarLInks";
 import HamburgerButton from "./hamburgerButton";
+import "./navbar.css";
 
 const Navbar = (props: any) => {
   function handleNavLinkButtonClick(e: any) {

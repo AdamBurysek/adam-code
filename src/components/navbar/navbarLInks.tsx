@@ -1,5 +1,4 @@
-import GitHubIcon from "../../images/github-mark-white.png";
-import { CzechFlag, EnglishFlag } from "../../assets/icons";
+import { CzechFlag, EnglishFlag, GitHubIcon } from "../../assets/icons";
 
 const NavbarLinks = (props: any) => {
   const navLinks = [
@@ -28,16 +27,9 @@ const NavbarLinks = (props: any) => {
         target="blank"
         onClick={() => props.setMenuOpened(false)}
       >
-        <img
-          src={GitHubIcon}
-          style={{
-            width: "25px",
-            height: "25px",
-            paddingTop: "1.5px",
-            marginRight: "26px",
-            marginLeft: "20px",
-          }}
-        />
+        <span className="github-icon">
+          <GitHubIcon />
+        </span>
       </a>
 
       <button

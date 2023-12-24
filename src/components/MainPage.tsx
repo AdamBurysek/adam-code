@@ -1,6 +1,5 @@
 import { useState } from "react";
 import withLoading from "../hooks/withLoading";
-
 import Hero from "./hero";
 import Navbar from "./navbar/navbar";
 import AboutMe from "./aboutMe";

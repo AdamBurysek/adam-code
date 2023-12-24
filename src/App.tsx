@@ -1,7 +1,7 @@
-import MainPage from "./components/MainPage";
-import "./App.css";
 import { useState } from "react";
 import { changeLanguage } from "./hooks/changeLanguage";
+import MainPage from "./components/MainPage";
+import "./App.css";
 
 function App() {
   const [language, setLanguage] = useState<string>("en");
