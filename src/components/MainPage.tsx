@@ -3,7 +3,7 @@ import withLoading from "../hooks/withLoading";
 import Hero from "./hero/hero";
 import Navbar from "./navbar/navbar";
 import AboutMe from "./aboutMe/aboutMe";
-import MySkillz from "./mySkillz";
+import MySkillz from "./mySkillz/mySkillz";
 
 function MainPage(props: any) {
   const [menuOpened, setMenuOpened] = useState<boolean>(false);

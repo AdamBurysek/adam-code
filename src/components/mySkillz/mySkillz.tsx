@@ -1,3 +1,5 @@
+import "./mySkillz.css";
+
 const MySkillz = (props: any) => {
   const skillz = [
     { name: "HTML", url: "https://en.wikipedia.org/wiki/HTML" },
