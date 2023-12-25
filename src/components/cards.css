@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+
+.cards_container {
+  max-width: 1400px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card_container {
+  border: 5px solid var(--clr-primary-5);
+  width: 320px;
+  height: 750px;
+  position: relative;
+  margin: 10px;
+  overflow: hidden;
+  border: 1px solid #000000;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.43);
+  border-radius: 7px;
+  color: #000000;
+  background-color: white;
+}
+
+@media screen and (max-width: 340px) {
+  .card_container {
+    margin: 10px 0px;
+  }
+}
+
+.dark_mode {
+  color: white;
+  background-color: black;
+  border: 1px solid #ffffff;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.43);
+}
+
+.card_image-box {
+  position: absolute;
+  top: 0px;
+  width: 300px;
+  height: 484px;
+  margin-top: 8px;
+  border-radius: 13px;
+  overflow: hidden;
+}
+
+.card_image-box-back {
+  position: absolute;
+  top: 0px;
+  width: 300px;
+  height: 154px;
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.card_image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+}
+
+.card_heading {
+  position: absolute;
+  top: 510px;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  left: 12px;
+}
+
+.frontend_heading {
+  top: 175px;
+}
+
+.backend_heading {
+  top: 255px;
+}
+
+.date_heading {
+  top: 335px;
+}
+
+.about_heading {
+  top: 415px;
+}
+
+.card_text {
+  position: absolute;
+  top: 545px;
+  left: 12px;
+  margin-right: 20px;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+
+  text-align: left;
+}
+
+.frontend_text {
+  top: 210px;
+}
+
+.backend_text {
+  top: 290px;
+}
+
+.date_text {
+  top: 370px;
+}
+
+.about_text {
+  top: 450px;
+}
+
+.card_line {
+  position: absolute;
+  width: 319px;
+  height: 0px;
+  left: 0px;
+  border: 1px solid #00000084;
+}
+
+.dark_line {
+  border: 1px solid #ffffff84;
+}
+
+.bottom_line {
+  top: 680px;
+}
+
+.frontend_line {
+  top: 240px;
+}
+
+.backend_line {
+  top: 320px;
+}
+
+.date_line {
+  top: 400px;
+}
+
+.button_container {
+  position: absolute;
+  top: 695px;
+  left: 45px;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  transition: transform 0.7s ease-out;
+}
+
+.slide_back {
+  left: 100%;
+}
+
+.slide_move {
+  transform: translateX(-100%);
+}
+
+.github_image {
+  width: 50px;
+  fill: white;
+}
+
+.github_hide {
+  display: none;
+}
+
+.github_link {
+  position: absolute;
+  top: 620px;
+  left: 250px;
+}
+
+.info_button {
+  width: 70px;
+}
+
+.web_button {
+  width: 145px;
+}

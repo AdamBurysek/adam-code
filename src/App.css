@@ -10,3 +10,7 @@
   height: 3px;
   background-color: white;
 }
+
+.my-projects {
+  max-height: fit-content;
+}
