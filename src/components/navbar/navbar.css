@@ -31,7 +31,7 @@
   font-weight: 500;
 }
 
-ul {
+.navbar ul {
   list-style-type: none;
 }
 
@@ -73,7 +73,7 @@ ul {
 }
 
 .navbar_links button:hover {
-  color: aqua;
+  color: var(--color-link-hover);
 }
 
 .github-button {

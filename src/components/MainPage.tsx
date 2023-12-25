@@ -3,6 +3,7 @@ import withLoading from "../hooks/withLoading";
 import Hero from "./hero/hero";
 import Navbar from "./navbar/navbar";
 import AboutMe from "./aboutMe/aboutMe";
+import MySkillz from "./mySkillz";
 
 function MainPage(props: any) {
   const [menuOpened, setMenuOpened] = useState<boolean>(false);
@@ -24,6 +25,7 @@ function MainPage(props: any) {
         <div className="container">
           <Hero />
           <AboutMe language={props.language} />
+          <MySkillz language={props.language} />
           <section>
             <div style={{ fontSize: 60, paddingTop: "80px" }} id="test">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla
