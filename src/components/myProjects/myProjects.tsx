@@ -1,6 +1,6 @@
-import "./cards.css";
 import Card from "./card";
 import { useState } from "react";
+import "./myProjects.css";
 
 const MyProjects = (props: any) => {
   const [showAllProjects, setShowAllProjects] = useState(false);

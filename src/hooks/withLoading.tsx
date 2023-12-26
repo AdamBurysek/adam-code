@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Loading from "../components/loading";
+import Loading from "../components/loading/loading";
 
 const withLoading = <P extends object>(
   WrappedComponent: React.ComponentType<P>

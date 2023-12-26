@@ -1,0 +1,42 @@
+.loading_container {
+  position: absolute;
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading_text-container {
+  position: relative;
+}
+
+.loading_text {
+  position: absolute;
+  left: -140px;
+  top: -40px;
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.loading_loader {
+  border: 20px solid rgba(255, 255, 255, 0.417);
+  border-radius: 50%;
+  border-top: 20px solid #ff7a59;
+  width: 150px;
+  height: 150px;
+  animation: spinner 2s linear infinite;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
