@@ -30,7 +30,7 @@
 
 .dark_mode {
   color: white;
-  background-color: black;
+  background-color: transparent;
   border: 1px solid #ffffff;
   box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.43);
 }
@@ -63,8 +63,8 @@
 
 .card_heading {
   position: absolute;
-  top: 510px;
-  font-family: "Inter", sans-serif;
+  top: 475px;
+  font-family: "SF-Pro";
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
@@ -72,49 +72,48 @@
 }
 
 .frontend_heading {
-  top: 175px;
+  top: 140px;
 }
 
 .backend_heading {
-  top: 255px;
+  top: 220px;
 }
 
 .date_heading {
-  top: 335px;
+  top: 300px;
 }
 
 .about_heading {
-  top: 415px;
+  top: 380px;
 }
 
 .card_text {
   position: absolute;
-  top: 545px;
+  top: 525px;
   left: 12px;
   margin-right: 20px;
-  font-family: "Inter", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 15px;
+  font-family: "SF-Pro";
+  font-weight: 100;
+  font-size: 18px;
   line-height: 18px;
 
   text-align: left;
 }
 
 .frontend_text {
-  top: 210px;
+  top: 190px;
 }
 
 .backend_text {
-  top: 290px;
+  top: 270px;
 }
 
 .date_text {
-  top: 370px;
+  top: 350px;
 }
 
 .about_text {
-  top: 450px;
+  top: 430px;
 }
 
 .card_line {
@@ -180,14 +179,44 @@
 
 .github_link {
   position: absolute;
-  top: 620px;
+  top: 610px;
   left: 250px;
 }
 
+.project_button {
+  font-family: "SF-Pro";
+  font-size: 15px;
+  font-weight: 500;
+  height: 35px;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--color-white);
+  border: 1.5px solid white;
+  border-radius: 5px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.project_button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--color-link-hover);
+}
+
 .info_button {
+  margin-right: 10px;
   width: 70px;
 }
 
 .web_button {
   width: 145px;
+}
+
+.show-more_button {
+  margin-top: 50px;
+  width: 200px;
+  height: 40px;
+  justify-self: center;
+}
+
+.show-more_button-container {
+  display: flex;
+  justify-content: center;
 }

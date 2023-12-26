@@ -1,5 +1,5 @@
 import { useState } from "react";
-import githubimage from "../images/github-mark.svg";
+import githubimage from "../images/github-mark-white.svg";
 
 const Card = (props: any) => {
   let [showInfo, setShowInfo] = useState(false);
@@ -100,7 +100,7 @@ const Card = (props: any) => {
       <div className="button_container">
         <button
           onClick={() => setShowInfo(!showInfo)}
-          className="btn btn-primary fw-bold me-3 info_button"
+          className="project_button info_button"
         >
           {showInfo && props.language === "en"
             ? "Back"
@@ -111,7 +111,7 @@ const Card = (props: any) => {
 
         <button
           disabled={props.web_url === ""}
-          className="btn btn-primary fw-bold me-1 web_button"
+          className="project_button web_button"
           onClick={() => {
             window.open(props.web_url, "_blank", "noopener,noreferrer");
           }}

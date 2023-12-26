@@ -12,5 +12,21 @@
 }
 
 .my-projects {
+  max-height: 1720px;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 1020px) {
+  .my-projects {
+    max-height: 2490px;
+  }
+}
+@media screen and (max-width: 683px) {
+  .my-projects {
+    max-height: 4810px;
+  }
+}
+
+.my-projects_opened {
   max-height: fit-content;
 }
