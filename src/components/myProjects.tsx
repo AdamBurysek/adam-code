@@ -46,7 +46,7 @@ const MyProjects = (props: any) => {
                 />
               ))
           ) : (
-            <div style={{ height: "60vh", padding: "100px" }}>
+            <div style={{ height: "60vh", padding: "100px", color: "white" }}>
               No projects found
             </div>
           )}
