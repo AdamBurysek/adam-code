@@ -10,3 +10,14 @@
   height: 3px;
   background-color: white;
 }
+
+.section-content {
+  margin-top: 10vh;
+}
+
+@media screen and (max-height: 667px) {
+  .section-content {
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
+}

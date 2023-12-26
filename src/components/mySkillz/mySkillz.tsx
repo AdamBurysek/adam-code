@@ -84,8 +84,8 @@ const MySkillz = (props: any) => {
 
   return (
     <section id="my-skillz" className="my-skillz">
+      <div className="section-line" />
       <div className="section-content">
-        <div className="section-line" />
         <h1>{props.language === "en" ? "My Skillz" : "Moje dovednosti"}</h1>
         <div className="my-skillz_content">
           <ul>

@@ -3,9 +3,9 @@ import "./aboutMe.css";
 
 const AboutMe = (props: any) => {
   return (
-    <section id="about-me" className="about-me">
+    <section id="about-me" className="about-me ">
+      <div className="section-line" />
       <div className="section-content">
-        <div className="section-line" />
         <h1>{props.language === "en" ? "About Me" : "O mně"}</h1>
         <div className="about-me_content">
           <img className="about-me_picture" src={AdamPicture} />
