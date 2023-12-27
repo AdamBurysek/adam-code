@@ -13,6 +13,7 @@ html {
   --color-white: #fff;
   --color-navbar: rgba(0, 0, 0, 0.57);
   --color-link-hover: rgba(0, 240, 255, 1);
+  --color-input-box: rgba(255, 255, 255, 0.248);
 }
 
 body {
@@ -32,7 +33,15 @@ h1 {
   font-size: 48px;
   font-weight: 510;
   text-align: center;
-  margin: 50px;
+  margin: 50px 0;
+}
+
+h2 {
+  color: var(--color-white);
+  font-size: 32px;
+  font-weight: 200;
+  text-align: center;
+  margin: 30px;
 }
 
 p {

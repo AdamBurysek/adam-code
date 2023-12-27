@@ -13,6 +13,11 @@
     max-height: 4810px;
   }
 }
+@media screen and (max-width: 439px) {
+  .my-projects {
+    max-height: 4790px;
+  }
+}
 
 .my-projects_opened {
   max-height: fit-content;
@@ -230,6 +235,7 @@
 
 .show-more_button {
   margin-top: 50px;
+  margin-bottom: 50px;
   width: 200px;
   height: 40px;
   justify-self: center;
