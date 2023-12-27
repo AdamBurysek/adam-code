@@ -20,6 +20,7 @@ body {
   margin: 0;
   background-color: rgba(0, 0, 0, 0.85);
   font-family: "SF-Pro", sans-serif;
+  min-width: 320px;
 }
 
 body a {

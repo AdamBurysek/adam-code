@@ -17,11 +17,24 @@
 
 .loading_text {
   position: absolute;
-  left: -185px;
-  top: -50px;
+  left: -190px;
+  top: -55px;
   font-size: 32px;
   font-weight: 500;
   color: rgb(255, 255, 255);
+  animation: text-animation 3s ease-in-out infinite;
+}
+
+@keyframes text-animation {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .loading_loader {
@@ -30,10 +43,10 @@
   height: 250px;
   border-radius: 50%;
   background: linear-gradient(#f07e6e, #84cdfa, #5ad1cd);
-  animation: animate 1.2s linear infinite;
+  animation: loader-animation 1.2s linear infinite;
 }
 
-@keyframes animate {
+@keyframes loader-animation {
   0% {
     transform: rotate(0deg);
   }
@@ -74,6 +87,6 @@
   right: 10px;
   bottom: 10px;
   background: #000000;
-  border: solid white 10px;
+  border: solid rgb(255, 255, 255) 10px;
   border-radius: 50%;
 }

@@ -1,10 +1,10 @@
 import { useScroll } from "framer-motion";
-import Hero1 from "../../images/heroParallax/Hero-1.webp";
-import Hero2 from "../../images/heroParallax/Hero-2.webp";
-import Hero3 from "../../images/heroParallax/Hero-3.webp";
-import Hero4 from "../../images/heroParallax/Hero-4.webp";
-import Hero5 from "../../images/heroParallax/Hero-5.webp";
-import Hero6 from "../../images/heroParallax/Hero-6.webp";
+import Background from "../../images/heroParallax/background.webp";
+import OrangeMountains from "../../images/heroParallax/orangeMountains.webp";
+import PinkMountains from "../../images/heroParallax/pinkMountains.webp";
+import RedMountains from "../../images/heroParallax/redMountains.webp";
+import PurpleMountains from "../../images/heroParallax/purpleMountains.webp";
+import ClosestMountain from "../../images/heroParallax/closestMountain.webp";
 import { motion, useTransform } from "framer-motion";
 import HeroText from "./heroText";
 import { useRef } from "react";
@@ -27,25 +27,25 @@ const Hero = () => {
     <section id="home" ref={pageRef}>
       <div className="hero_img-container">
         <motion.img
-          src={Hero1}
+          src={Background}
           style={{ y: background, translateY: "-80px", zIndex: 0 }}
         />
         <HeroText scrollYProgress={scrollYProgress} />
         <motion.img
-          src={Hero2}
+          src={OrangeMountains}
           style={{ y: orangeMountains, translateY: "30px" }}
         />
         <motion.img
-          src={Hero3}
+          src={PinkMountains}
           style={{ y: pinkMountains, translateY: "20px" }}
           className="instet"
         />
         <motion.img
-          src={Hero4}
+          src={RedMountains}
           style={{ y: redMountains, translateY: "10px" }}
         />
-        <motion.img src={Hero5} style={{ y: purpleMountains }} />
-        <motion.img src={Hero6} />
+        <motion.img src={PurpleMountains} style={{ y: purpleMountains }} />
+        <motion.img src={ClosestMountain} />
       </div>
     </section>
   );
