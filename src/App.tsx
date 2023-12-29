@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { changeLanguage } from "./hooks/changeLanguage";
 import MainPage from "./components/MainPage";
 import mongoDataService from "./services/mongoDataService";
-import "./App.css";
 
 interface Projects {
   id: string;

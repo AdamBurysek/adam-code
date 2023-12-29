@@ -81,3 +81,27 @@ section {
   z-index: -100;
   overflow: hidden;
 }
+
+.container {
+  max-width: 1780px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.section-line {
+  width: 100%;
+  max-width: 1780px;
+  height: 3px;
+  background-color: white;
+}
+
+.section-content {
+  margin-top: 10vh;
+}
+
+@media screen and (max-height: 667px) {
+  .section-content {
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
+}
