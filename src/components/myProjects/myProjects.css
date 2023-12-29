@@ -10,12 +10,12 @@
 }
 @media screen and (max-width: 683px) {
   .my-projects {
-    max-height: 4810px;
+    max-height: 3270px;
   }
 }
 @media screen and (max-width: 439px) {
   .my-projects {
-    max-height: 4790px;
+    max-height: 3250px;
   }
 }
 

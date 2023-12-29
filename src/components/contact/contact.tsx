@@ -3,6 +3,7 @@ import FormDataService from "../../services/formDataService";
 import "./contact.css";
 
 const Contact = (props: any) => {
+  const [formSend, setFormSend] = useState(false);
   const [formValues, setFormValues] = useState({
     name: "",
     email: "",
@@ -43,17 +44,39 @@ const Contact = (props: any) => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const initForm = () => {
+    setFormValues({
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const hasErrors = Object.values(errors).some((error) => error);
+
+    const newErrors = {
+      name: formValues.name.trim().length < 2,
+      email: !/^\S+@\S+\.\S{2,}$/.test(formValues.email),
+      subject: formValues.subject.trim().length === 0,
+    };
+
+    setErrors(newErrors);
+
+    const hasErrors = Object.values(newErrors).some((error) => error);
+
     if (!hasErrors) {
-      FormDataService.sendData(formValues)
-        .then((response) => {
-          console.log(response);
-        })
-        .catch((error) => {
-          console.error(error);
-        });
+      try {
+        setFormSend(true);
+        await FormDataService.sendData(formValues);
+        setTimeout(() => {
+          setFormSend(false);
+          initForm();
+        }, 3000);
+      } catch (error) {
+        console.error(error);
+      }
     }
   };
 
@@ -66,58 +89,88 @@ const Contact = (props: any) => {
           <h2>Contact Form</h2>
 
           <form onSubmit={handleSubmit}>
-            <label>Name</label>
+            <label> {props.language === "en" ? "Name" : "Jméno"}</label>
             <input
               type="text"
               name="name"
               maxLength={50}
-              placeholder="Your Name"
+              placeholder={
+                props.language === "en" ? "Your Name" : "Tvoje jméno"
+              }
               onChange={handleChange}
               value={formValues.name}
               onBlur={handleBlur}
+              disabled={formSend ? true : false}
             />
-            {errors.name && <span className="error-message">Invalid name</span>}
+            {errors.name && (
+              <span className="error-message">
+                {props.language === "en" ? "Invalid name" : "Neplatné jméno"}
+              </span>
+            )}
             <label>Email</label>
             <input
               type="text"
               name="email"
               maxLength={50}
-              placeholder="Your Email"
+              placeholder={
+                props.language === "en" ? "Your Email" : "Tvůj email"
+              }
               value={formValues.email}
               onChange={handleChange}
               onBlur={handleBlur}
+              disabled={formSend ? true : false}
             />
             {errors.email && (
-              <span className="error-message">Invalid email</span>
+              <span className="error-message">
+                {props.language === "en" ? "Invalid email" : "Neplatný email"}
+              </span>
             )}
 
-            <label>Subject</label>
+            <label>{props.language === "en" ? "Subject" : "Předmět"}</label>
             <input
               type="text"
               name="subject"
               maxLength={50}
-              placeholder="Subject"
+              placeholder={props.language === "en" ? "Subject" : "Předmět"}
               value={formValues.subject}
               onChange={handleChange}
               onBlur={handleBlur}
+              disabled={formSend ? true : false}
             />
             {errors.subject && (
-              <span className="error-message">Invalid subject</span>
+              <span className="error-message">
+                {props.language === "en"
+                  ? "Invalid subject"
+                  : "Neplatný předmět"}
+              </span>
             )}
-            <label>Message</label>
+            <label> {props.language === "en" ? "Message" : "Zpráva"}</label>
             <textarea
               name="message"
               rows={7}
               maxLength={1000}
-              placeholder="Your Message"
+              placeholder={
+                props.language === "en" ? "Your Message" : "Tvoje zpráva"
+              }
               value={formValues.message}
               onChange={handleChange}
               onBlur={handleBlur}
+              disabled={formSend ? true : false}
             />
             <div className="submit-btn-container">
-              <button className="contact_submit-button" type="submit">
-                Submit
-              </button>
+              {formSend ? (
+                <button
+                  disabled
+                  className="contact_submit-button"
+                  type="submit"
+                >
+                  {props.language === "en" ? "Thank You" : "Děkuji"}
+                </button>
+              ) : (
+                <button className="contact_submit-button" type="submit">
+                  {props.language === "en" ? "Submit" : "Odeslat"}
+                </button>
+              )}
             </div>
           </form>
         </div>
