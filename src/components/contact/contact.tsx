@@ -85,9 +85,13 @@ const Contact = (props: any) => {
       <div className="section-line" />
       <div className="section-content">
         <h1>{props.language === "en" ? "Contact" : "Kontakt"}</h1>
+        <div className="contact_mail-container">
+          <a className="contact_mail" href="mailto:adam.burysek@seznam.cz">
+            adam.burysek@seznam.cz
+          </a>
+        </div>
         <div className="contact_form-container">
           <h2>Contact Form</h2>
-
           <form onSubmit={handleSubmit}>
             <label> {props.language === "en" ? "Name" : "Jméno"}</label>
             <input

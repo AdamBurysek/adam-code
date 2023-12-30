@@ -33,7 +33,13 @@ h1 {
   font-size: 48px;
   font-weight: 510;
   text-align: center;
-  margin: 50px 0;
+  margin: 30px 0;
+}
+
+@media screen and (min-width: 768px) {
+  h1 {
+    margin: 50px 0;
+  }
 }
 
 h2 {
@@ -102,6 +108,6 @@ section {
 @media screen and (max-height: 667px) {
   .section-content {
     margin-top: 0;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
   }
 }

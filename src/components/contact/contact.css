@@ -11,6 +11,24 @@
   }
 }
 
+.contact_mail-container {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 80px;
+}
+
+.contact_mail {
+  color: var(--color-white);
+  font-size: 22px;
+  font-weight: 10;
+}
+
+@media screen and (min-width: 425px) {
+  .contact_mail {
+    font-size: 34px;
+  }
+}
+
 form {
   display: flex;
   flex-direction: column;

@@ -8,14 +8,15 @@
     max-height: 2490px;
   }
 }
-@media screen and (max-width: 683px) {
+@media screen and (max-width: 768px) {
   .my-projects {
-    max-height: 3270px;
+    max-height: 3220px;
   }
 }
+
 @media screen and (max-width: 439px) {
   .my-projects {
-    max-height: 3250px;
+    max-height: 3210px;
   }
 }
 
@@ -235,7 +236,7 @@
 
 .show-more_button {
   margin-top: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 70px;
   width: 200px;
   height: 40px;
   justify-self: center;
