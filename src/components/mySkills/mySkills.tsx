@@ -1,6 +1,6 @@
-import "./mySkillz.css";
+import "./mySkills.css";
 
-const MySkillz = (props: any) => {
+const MySkills = (props: any) => {
   const skillz = [
     { name: "HTML", url: "https://en.wikipedia.org/wiki/HTML" },
     { name: "CSS", url: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
@@ -83,11 +83,11 @@ const MySkillz = (props: any) => {
   ];
 
   return (
-    <section id="my-skillz" className="my-skillz">
+    <section id="my-skills" className="my-skills">
       <div className="section-line" />
       <div className="section-content">
-        <h1>{props.language === "en" ? "My Skillz" : "Moje dovednosti"}</h1>
-        <div className="my-skillz_content">
+        <h1>{props.language === "en" ? "My Skills" : "Moje dovednosti"}</h1>
+        <div className="my-skills_content">
           <ul>
             {skillz.map((skill, index) => (
               <a href={skill.url} target="blank" key={index}>
@@ -101,4 +101,4 @@ const MySkillz = (props: any) => {
   );
 };
 
-export default MySkillz;
+export default MySkills;

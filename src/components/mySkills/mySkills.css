@@ -1,9 +1,9 @@
-.my-skillz_content {
+.my-skills_content {
   display: flex;
   justify-content: center;
 }
 
-.my-skillz_content ul {
+.my-skills_content ul {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -13,26 +13,26 @@
 }
 
 @media screen and (min-width: 680px) {
-  .my-skillz_content {
+  .my-skills_content {
     padding-right: 200px;
   }
-  .my-skillz_content ul {
+  .my-skills_content ul {
     max-height: 320px;
   }
 }
 
-.my-skillz_content li::before {
+.my-skills_content li::before {
   content: "\2022";
   padding-right: 15px;
 }
 
-.my-skillz_content li {
+.my-skills_content li {
   color: var(--color-white);
   font-size: 28px;
   font-weight: 10;
   padding-bottom: 10px;
 }
 
-.my-skillz_content li:hover {
+.my-skills_content li:hover {
   color: var(--color-link-hover);
 }

@@ -4,7 +4,7 @@ const NavbarLinks = (props: any) => {
   const navLinks = [
     { target: "home", textEn: "Home", textCz: "Domů" },
     { target: "about-me", textEn: "About Me", textCz: "O mně" },
-    { target: "my-skillz", textEn: "My Skills", textCz: "Moje dovednosti" },
+    { target: "my-skills", textEn: "My Skills", textCz: "Moje dovednosti" },
     { target: "my-projects", textEn: "My Projects", textCz: "Moje projekty" },
     { target: "contact", textEn: "Contact", textCz: "Kontakt" },
   ];

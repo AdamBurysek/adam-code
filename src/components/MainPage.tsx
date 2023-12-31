@@ -3,7 +3,7 @@ import withLoading from "../hooks/withLoading";
 import Hero from "./hero/hero";
 import Navbar from "./navbar/navbar";
 import AboutMe from "./aboutMe/aboutMe";
-import MySkillz from "./mySkillz/mySkillz";
+import MySkills from "./mySkills/mySkills";
 import MyProjects from "./myProjects/myProjects";
 import Contact from "./contact/contact";
 import Footer from "./footer/footer";
@@ -28,7 +28,7 @@ function MainPage(props: any) {
         <div className="container">
           <Hero />
           <AboutMe language={props.language} />
-          <MySkillz language={props.language} />
+          <MySkills language={props.language} />
           <MyProjects projects={props.projects} language={props.language} />
           <Contact language={props.language} />
         </div>
