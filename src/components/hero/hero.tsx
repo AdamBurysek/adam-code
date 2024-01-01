@@ -1,13 +1,13 @@
 import { useScroll } from "framer-motion";
+import { motion, useTransform } from "framer-motion";
+import { useRef } from "react";
 import Background from "../../images/heroParallax/background.webp";
 import OrangeMountains from "../../images/heroParallax/orangeMountains.webp";
 import PinkMountains from "../../images/heroParallax/pinkMountains.webp";
 import RedMountains from "../../images/heroParallax/redMountains.webp";
 import PurpleMountains from "../../images/heroParallax/purpleMountains.webp";
 import ClosestMountain from "../../images/heroParallax/closestMountain.webp";
-import { motion, useTransform } from "framer-motion";
 import HeroText from "./heroText";
-import { useRef } from "react";
 import "./hero.css";
 
 const Hero = () => {

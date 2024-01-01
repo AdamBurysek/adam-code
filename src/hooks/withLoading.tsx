@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Loading from "../components/loading/loading";
 
-const withLoading = <P extends object>(
+export const withLoading = <P extends object>(
   WrappedComponent: React.ComponentType<P>
 ) => {
   const WithLoading: React.FC<P> = (props) => {
@@ -52,5 +52,3 @@ const withLoading = <P extends object>(
 
   return WithLoading;
 };
-
-export default withLoading;
