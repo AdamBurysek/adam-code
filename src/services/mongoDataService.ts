@@ -1,8 +1,10 @@
-import http from "../api-mongo.ts";
+import { createMongoDBApi } from "../api";
+
+const mongoDBApi = createMongoDBApi();
 
 class MongoDataService {
   getProjects() {
-    return http.get("/projects");
+    return mongoDBApi.get("/projects");
   }
 }
 

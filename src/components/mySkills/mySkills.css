@@ -12,12 +12,12 @@
   padding: 0;
 }
 
-@media screen and (min-width: 680px) {
+@media screen and (min-width: 870px) {
   .my-skills_content {
-    padding-right: 200px;
+    padding-right: 300px;
   }
   .my-skills_content ul {
-    max-height: 320px;
+    max-height: 360px;
   }
 }
 

@@ -2,10 +2,12 @@ import Card from "./card";
 import { useState } from "react";
 import "./myProjects.css";
 
+// Cards are from older project
+
 const MyProjects = (props: any) => {
   const [showAllProjects, setShowAllProjects] = useState(false);
 
-  function haldleShowAllProjectsButtonClick() {
+  function handleShowAllProjectsButtonClick() {
     setShowAllProjects(!showAllProjects);
   }
 
@@ -53,12 +55,21 @@ const MyProjects = (props: any) => {
         </div>
       </section>
       <div className="show-more_button-container">
-        <button
-          className="project_button show-more_button"
-          onClick={haldleShowAllProjectsButtonClick}
-        >
-          {showAllProjects ? "Hide Older Projects" : "Show Older Projects"}
-        </button>
+        {props.language === "en" ? (
+          <button
+            className="project_button show-more_button"
+            onClick={handleShowAllProjectsButtonClick}
+          >
+            {showAllProjects ? "Hide Older Projects" : "Show Older Projects"}
+          </button>
+        ) : (
+          <button
+            className="project_button show-more_button"
+            onClick={handleShowAllProjectsButtonClick}
+          >
+            {showAllProjects ? "Schov starší projekty" : "Ukaž starší projekty"}
+          </button>
+        )}
       </div>
     </>
   );

@@ -1,8 +1,10 @@
-import http from "../api-formspree";
+import { createFormspreeApi } from "../api";
+
+const formspreeApi = createFormspreeApi();
 
 class FormDataService {
   sendData(data: any) {
-    return http.post("", data);
+    return formspreeApi.post("", data);
   }
 }
 

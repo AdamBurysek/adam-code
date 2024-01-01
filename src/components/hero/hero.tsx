@@ -28,6 +28,7 @@ const Hero = () => {
       <div className="hero_img-container">
         <motion.img
           src={Background}
+          className="hero_background"
           style={{ y: background, translateY: "-80px", zIndex: 0 }}
         />
         <HeroText scrollYProgress={scrollYProgress} />

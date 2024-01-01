@@ -17,6 +17,14 @@ const MySkills = (props: any) => {
       url: "https://github.com",
     },
     {
+      name: "Figma",
+      url: "https://figma.com",
+    },
+    {
+      name: "Adobe Photoshop",
+      url: "https://www.adobe.com/cz/products/photoshop.html",
+    },
+    {
       name: "React",
       url: "https://www.react.dev",
     },
@@ -35,6 +43,10 @@ const MySkills = (props: any) => {
     {
       name: "Tailwind",
       url: "https://tailwindcss.com",
+    },
+    {
+      name: "Mantine",
+      url: "https://mantine.dev/",
     },
     {
       name: "Jest",
