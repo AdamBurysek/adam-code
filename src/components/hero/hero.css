@@ -1,6 +1,7 @@
 .hero_img-container {
   display: grid;
   grid-template-areas: "stack";
+  height: 100vh;
   height: 100svh;
   max-height: 1300px;
   overflow: hidden;

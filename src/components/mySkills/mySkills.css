@@ -1,6 +1,7 @@
 .my-skills_content {
   display: flex;
   justify-content: center;
+  margin-bottom: 40px;
 }
 
 .my-skills_content ul {
