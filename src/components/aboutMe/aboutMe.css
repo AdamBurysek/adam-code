@@ -1,7 +1,9 @@
 .about-me_content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+}
+
+.about-me_content > * {
+  margin: 0 auto;
 }
 
 .about-me_picture {
@@ -15,20 +17,6 @@
 
 @media screen and (min-width: 1025px) {
   .about-me_content {
-    flex-direction: row;
-    padding: 0 5vw;
-    gap: 100px;
-  }
-}
-
-@media screen and (min-width: 1420px) {
-  .about-me_content {
-    padding: 0 15vw;
-  }
-}
-
-@media screen and (min-width: 1780px) {
-  .about-me_content {
-    padding: 0 30vh;
+    grid-template-columns: 1.8fr 1.8fr 1fr;
   }
 }
