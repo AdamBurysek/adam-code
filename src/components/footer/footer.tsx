@@ -1,5 +1,5 @@
 import { APLogo } from "../../assets/icons";
-import { getCurrentYear } from "../../hooks/getCurrentYear";
+import { getCurrentYear } from "../../utils/getCurrentYear";
 import "./footer.css";
 
 const Footer = () => {

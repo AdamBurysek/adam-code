@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { changeLanguage } from "./hooks/changeLanguage";
+import { changeLanguage } from "./utils/changeLanguage";
 import MainPage from "./components/MainPage";
 import mongoDataService from "./services/mongoDataService";
 
