@@ -6,9 +6,9 @@ const HamburgerButton = (props: any) => {
       onClick={props.handleHamburgerButtonClick}
       className={props.menuOpened ? "hamburger is-active" : "hamburger"}
     >
-      <span className="line"></span>
-      <span className="line"></span>
-      <span className="line"></span>
+      <span className="hamburger-line"></span>
+      <span className="hamburger-line"></span>
+      <span className="hamburger-line"></span>
     </button>
   );
 };
