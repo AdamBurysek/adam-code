@@ -2,7 +2,7 @@ import { useState } from "react";
 import githubimage from "../../images/github-mark-white.svg";
 
 const Card = (props: any) => {
-  let [showInfo, setShowInfo] = useState(false);
+  const [showInfo, setShowInfo] = useState(false);
 
   return (
     <div

@@ -11,7 +11,7 @@ html {
   --color-black: #000;
   --color-white: #fff;
   --color-navbar: rgba(0, 0, 0, 0.57);
-  --color-link-hover: rgba(0, 240, 255, 1);
+  --color-link-hover: #00f0ff;
   --color-input-box: rgba(255, 255, 255, 0.248);
 }
 
