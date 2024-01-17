@@ -29,17 +29,17 @@
 }
 
 .navbar_logo:hover > svg > path {
-  animation: colorChange 1s ease-in-out forwards;
+  animation: colorChange 10s ease-in-out infinite;
 }
 
 @keyframes colorChange {
   0% {
     fill: white;
   }
-  45% {
+  5% {
     fill: var(--color-link-hover);
   }
-  100% {
+  10% {
     fill: white;
   }
 }
