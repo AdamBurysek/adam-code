@@ -3,8 +3,7 @@ import axios from "axios";
 // MongoDB API
 export const createMongoDBApi = () => {
   return axios.create({
-    baseURL:
-      "https://eu-central-1.aws.data.mongodb-api.com/app/adamcode-ebdbn/endpoint/",
+    baseURL: import.meta.env.VITE_MONGODB_API,
     headers: {
       "Content-Type": "application/json",
     },
@@ -14,7 +13,7 @@ export const createMongoDBApi = () => {
 // Formspree API
 export const createFormspreeApi = () => {
   return axios.create({
-    baseURL: "https://formspree.io/f/mgejdjjq",
+    baseURL: import.meta.env.VITE_FORM_API,
     headers: {
       "Content-Type": "application/json",
     },
