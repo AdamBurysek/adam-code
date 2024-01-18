@@ -1,10 +1,16 @@
 import Card from "./card";
 import { useState } from "react";
 import "./myProjects.css";
+import { Projects } from "../../interfaces/global";
 
 // Cards are from older project
 
-const MyProjects = (props: any) => {
+type Props = {
+  language: string;
+  projects: Projects[] | [];
+};
+
+const MyProjects = (props: Props) => {
   const [showAllProjects, setShowAllProjects] = useState(false);
 
   function handleShowAllProjectsButtonClick() {
@@ -26,9 +32,9 @@ const MyProjects = (props: any) => {
             props.projects
               .slice()
               .reverse()
-              .map((card: any) => (
+              .map((card: Projects, index) => (
                 <Card
-                  key={card._id}
+                  key={index}
                   darkMode={"dark"}
                   language={props.language}
                   title_en={card.title.en}

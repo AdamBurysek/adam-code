@@ -7,10 +7,16 @@ import MySkills from "./mySkills/mySkills";
 import MyProjects from "./myProjects/myProjects";
 import Contact from "./contact/contact";
 import Footer from "./footer/footer";
+import { Projects } from "../interfaces/global";
 
-function MainPage(props: any) {
+type Props = {
+  handleLanguageButtonClick: () => void;
+  language: string;
+  projects: Projects[] | [];
+};
+
+function MainPage(props: Props) {
   const [menuOpened, setMenuOpened] = useState<boolean>(false);
-
   const handleHamburgerButtonClick = () => {
     setMenuOpened(!menuOpened);
   };

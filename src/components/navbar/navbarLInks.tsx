@@ -1,6 +1,14 @@
 import { CzechFlag, EnglishFlag, GitHubIcon } from "../../assets/icons";
 
-const NavbarLinks = (props: any) => {
+type Props = {
+  language: string;
+  handleLanguageButtonClick: () => void;
+  menuOpened: boolean;
+  setMenuOpened: (value: boolean) => void;
+  handleNavLinkButtonClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
+};
+
+const NavbarLinks = (props: Props) => {
   const navLinks = [
     { target: "home", textEn: "Home", textCz: "Domů" },
     { target: "about-me", textEn: "About Me", textCz: "O mně" },

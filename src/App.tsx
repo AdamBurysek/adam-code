@@ -2,39 +2,15 @@ import { useEffect, useState } from "react";
 import { changeLanguage } from "./utils/changeLanguage";
 import MainPage from "./components/MainPage";
 import mongoDataService from "./services/mongoDataService";
-
-interface Projects {
-  id: string;
-  title: {
-    en: string;
-    cz: string;
-  };
-  description: {
-    en: string;
-    cz: string;
-  };
-  frontend: string;
-  backend: string;
-  date: {
-    en: string;
-    cz: string;
-  };
-  about: {
-    en: string;
-    cz: string;
-  };
-  webUrl: string;
-  gitUrl: string;
-  frontImage: string;
-  backImage: string;
-}
+import { AxiosResponse } from "axios";
+import { Projects } from "./interfaces/global";
 
 function App() {
   const [language, setLanguage] = useState<string>("en");
-  const [projects, setProjects] = useState<Projects | []>([]);
+  const [projects, setProjects] = useState<Projects[] | []>([]);
 
   useEffect(() => {
-    mongoDataService.getProjects().then((response: any) => {
+    mongoDataService.getProjects().then((response: AxiosResponse) => {
       setProjects(JSON.parse(JSON.stringify(response.data)));
     });
   }, []);

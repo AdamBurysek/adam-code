@@ -1,6 +1,11 @@
 import "./hamburgerButton.css";
 
-const HamburgerButton = (props: any) => {
+type Props = {
+  handleHamburgerButtonClick: () => void;
+  menuOpened: boolean;
+};
+
+const HamburgerButton = (props: Props) => {
   return (
     <button
       onClick={props.handleHamburgerButtonClick}

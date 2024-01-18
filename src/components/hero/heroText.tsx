@@ -1,7 +1,11 @@
 import { useState } from "react";
-import { motion, useMotionValueEvent } from "framer-motion";
+import { MotionValue, motion, useMotionValueEvent } from "framer-motion";
 
-const HeroText = ({ scrollYProgress }: any) => {
+interface HeroTextProps {
+  scrollYProgress: MotionValue<number>;
+}
+
+const HeroText: React.FC<HeroTextProps> = ({ scrollYProgress }) => {
   const [hideHeaderText, setHideHeaderText] = useState(false);
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {

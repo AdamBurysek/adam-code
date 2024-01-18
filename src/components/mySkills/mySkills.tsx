@@ -1,6 +1,10 @@
 import "./mySkills.css";
 
-const MySkills = (props: any) => {
+type Props = {
+  language: string;
+};
+
+const MySkills = (props: Props) => {
   const skillz = [
     { name: "HTML", url: "https://en.wikipedia.org/wiki/HTML" },
     { name: "CSS", url: "https://developer.mozilla.org/en-US/docs/Web/CSS" },

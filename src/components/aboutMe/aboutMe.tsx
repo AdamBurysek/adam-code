@@ -1,7 +1,11 @@
 import AdamPicture from "../../images/Adam.webp";
 import "./aboutMe.css";
 
-const AboutMe = (props: any) => {
+type Props = {
+  language: string;
+};
+
+const AboutMe = (props: Props) => {
   return (
     <section id="about-me" className="about-me ">
       <div className="section-line" />

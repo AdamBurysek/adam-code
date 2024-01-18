@@ -1,7 +1,8 @@
 import { useState } from "react";
 import githubimage from "../../images/github-mark-white.svg";
+import { CardProps } from "../../interfaces/global";
 
-const Card = (props: any) => {
+const Card = (props: CardProps) => {
   const [showInfo, setShowInfo] = useState(false);
 
   return (

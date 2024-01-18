@@ -1,10 +1,15 @@
 import { useState } from "react";
 import FormDataService from "../../services/formDataService";
 import "./contact.css";
+import { FormValues } from "../../interfaces/global";
 
-const Contact = (props: any) => {
-  const [formSend, setFormSend] = useState(false);
-  const [formValues, setFormValues] = useState({
+type Props = {
+  language: string;
+};
+
+const Contact = (props: Props) => {
+  const [formSend, setFormSend] = useState<boolean>(false);
+  const [formValues, setFormValues] = useState<FormValues>({
     name: "",
     email: "",
     subject: "",
@@ -17,7 +22,9 @@ const Contact = (props: any) => {
     subject: false,
   });
 
-  const handleChange = (e: any) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
 
     const updatedFormValues = { ...formValues, [name]: value };

@@ -1,9 +1,10 @@
 import { createFormspreeApi } from "../api";
+import { FormValues } from "../interfaces/global";
 
 const formspreeApi = createFormspreeApi();
 
 class FormDataService {
-  sendData(data: any) {
+  sendData(data: FormValues) {
     return formspreeApi.post("", data);
   }
 }

@@ -3,14 +3,24 @@ import NavbarLinks from "./navbarLInks";
 import HamburgerButton from "./hamburgerButton";
 import "./navbar.css";
 
-const Navbar = (props: any) => {
-  function handleNavLinkButtonClick(e: any) {
+type Props = {
+  language: string;
+  handleLanguageButtonClick: () => void;
+  handleHamburgerButtonClick: () => void;
+  menuOpened: boolean;
+  setMenuOpened: (value: boolean) => void;
+};
+
+const Navbar = (props: Props) => {
+  function handleNavLinkButtonClick(
+    e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>
+  ) {
     props.setMenuOpened(false);
     const navHeight = 70;
     const targetId = e.currentTarget.getAttribute("data-target");
-    const section = document.getElementById(targetId);
+    const section = document.getElementById(targetId || "");
     if (section) {
-      let position = section.offsetTop - navHeight;
+      const position = section.offsetTop - navHeight;
       window.scrollTo({
         left: 0,
         top: position,

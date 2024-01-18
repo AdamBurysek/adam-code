@@ -10,9 +10,9 @@ html {
 :root {
   --color-black: #000;
   --color-white: #fff;
-  --color-navbar: rgba(0, 0, 0, 0.57);
+  --color-navbar: #00000091;
   --color-link-hover: #00f0ff;
-  --color-input-box: rgba(255, 255, 255, 0.248);
+  --color-input-box: #ffffff3f;
 }
 
 body {

@@ -1,6 +1,10 @@
 import { APLogo } from "../../assets/icons";
 
-const PageLogo = (props: any) => {
+type Props = {
+  handleNavLinkButtonClick: (e: React.MouseEvent<HTMLAnchorElement>) => void;
+};
+
+const PageLogo = (props: Props) => {
   return (
     <a
       onClick={props.handleNavLinkButtonClick}
