@@ -37,6 +37,10 @@ const MySkills = (props: Props) => {
       url: "https://reactnative.dev",
     },
     {
+      name: "Next",
+      url: "https://nextjs.org/",
+    },
+    {
       name: "Electron",
       url: "https://www.electronjs.org",
     },
@@ -79,6 +83,14 @@ const MySkills = (props: Props) => {
     {
       name: "Clerk",
       url: "https://clerk.com",
+    },
+    {
+      name: "OAuth",
+      url: "https://en.wikipedia.org/wiki/OAuth",
+    },
+    {
+      name: "React Email",
+      url: "https://react.email/",
     },
     {
       name: "Sentry",

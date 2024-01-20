@@ -23,6 +23,11 @@
   font-weight: 10;
 }
 
+.contact_mail:hover {
+  color: var(--color-link-hover);
+  transition: 0.3s;
+}
+
 @media screen and (min-width: 425px) {
   .contact_mail {
     font-size: 34px;
