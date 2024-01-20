@@ -127,3 +127,7 @@ textarea::placeholder {
   display: flex;
   align-self: center;
 }
+
+.contact_form-container textarea {
+  resize: none;
+}
