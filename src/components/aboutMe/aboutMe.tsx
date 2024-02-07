@@ -24,14 +24,14 @@ const AboutMe = (props: Props) => {
         <div ref={contentRef} className="about-me_content">
           <motion.img
             animate={isInView ? "show" : "hide"}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.2, ease: "anticipate" }}
             variants={variants}
             className="about-me_picture"
             src={AdamPicture}
           />
           <motion.p
             animate={isInView ? "show" : "hide"}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.2, ease: "easeIn" }}
             variants={variants}
           >
             {props.language === "en"

@@ -25,7 +25,6 @@ export type Projects = {
 };
 
 export type CardProps = {
-  key: number;
   darkMode: string;
   language: string;
   title_en: string;
