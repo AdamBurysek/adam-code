@@ -3,6 +3,7 @@ import { useRef, useState } from "react";
 import "./myProjects.css";
 import { Projects } from "../../interfaces/global";
 import { useInView, motion } from "framer-motion";
+import { GitHubIcon } from "../../assets/icons";
 
 // Cards are from older project
 
@@ -78,21 +79,35 @@ const MyProjects = (props: Props) => {
         </div>
       </section>
       <div className="show-more_button-container">
-        {props.language === "en" ? (
+        {props.language === "en" && !showAllProjects && (
           <button
             className="project_button show-more_button"
             onClick={handleShowAllProjectsButtonClick}
           >
-            {showAllProjects ? "Hide Older Projects" : "Show Older Projects"}
-          </button>
-        ) : (
-          <button
-            className="project_button show-more_button"
-            onClick={handleShowAllProjectsButtonClick}
-          >
-            {showAllProjects ? "Schov starší projekty" : "Ukaž starší projekty"}
+            Show Older Projects
           </button>
         )}
+
+        {props.language !== "en" && !showAllProjects && (
+          <button
+            className="project_button show-more_button"
+            onClick={handleShowAllProjectsButtonClick}
+          >
+            Ukaž starší projekty
+          </button>
+        )}
+      </div>
+      <div className="github-link-container">
+        <a
+          className="github-button-link"
+          href="https://github.com/AdamBurysek"
+          target="blank"
+        >
+          <GitHubIcon width="120" height="120" />
+        </a>
+        <p className="github-link-text">
+          You can find more of my projects on my GitHub.
+        </p>
       </div>
     </>
   );

@@ -35,7 +35,7 @@ const NavbarLinks = (props: Props) => {
         target="blank"
         onClick={() => props.setMenuOpened(false)}
       >
-        <GitHubIcon />
+        <GitHubIcon width={"25"} height={"25"} />
       </a>
       <button
         className={

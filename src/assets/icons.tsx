@@ -87,13 +87,18 @@ export const EnglishFlag: React.FC = () => {
   );
 };
 
-export const GitHubIcon: React.FC = () => {
+interface GitHubIconProps {
+  width: string;
+  height: string;
+}
+
+export const GitHubIcon: React.FC<GitHubIconProps> = ({ width, height }) => {
   return (
     <>
       <span className="github-icon">
         <svg
-          width="25"
-          height="25"
+          width={width}
+          height={height}
           viewBox="0 0 25 25"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
