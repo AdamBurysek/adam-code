@@ -15,7 +15,7 @@ type Props = {
 const MyProjects = (props: Props) => {
   const [showAllProjects, setShowAllProjects] = useState(false);
   const contentRef = useRef(null);
-  const isInView = useInView(contentRef);
+  const isInView = useInView(contentRef, { once: true });
 
   const variants = {
     show: { x: 0 },
@@ -106,7 +106,9 @@ const MyProjects = (props: Props) => {
           <GitHubIcon width="120" height="120" />
         </a>
         <p className="github-link-text">
-          You can find more of my projects on my GitHub.
+          {props.language === "en"
+            ? "You can find more of my projects on my GitHub."
+            : "Na GitHubu najdete i pár dalších mých zajímavých projektů."}
         </p>
       </div>
     </>
