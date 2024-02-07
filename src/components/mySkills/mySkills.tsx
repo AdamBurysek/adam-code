@@ -1,10 +1,19 @@
+import { useRef } from "react";
 import "./mySkills.css";
+import { useInView, motion } from "framer-motion";
 
 type Props = {
   language: string;
 };
 
 const MySkills = (props: Props) => {
+  const contentRef = useRef(null);
+  const isInView = useInView(contentRef, { once: true });
+
+  const variants = {
+    show: { x: 0 },
+    hide: { x: 100000 },
+  };
   const skillz = [
     { name: "HTML", url: "https://en.wikipedia.org/wiki/HTML" },
     { name: "CSS", url: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
@@ -115,12 +124,19 @@ const MySkills = (props: Props) => {
       <div className="section-line" />
       <div className="section-content">
         <h1>{props.language === "en" ? "My Skills" : "Moje dovednosti"}</h1>
-        <div className="my-skills_content">
+        <div className="my-skills_content" ref={contentRef}>
           <ul>
             {skillz.map((skill, index) => (
-              <a href={skill.url} target="blank" key={index}>
+              <motion.a
+                animate={isInView ? "show" : "hide"}
+                transition={{ duration: 0.3 * index }}
+                variants={variants}
+                href={skill.url}
+                target="blank"
+                key={index}
+              >
                 <li>{skill.name}</li>
-              </a>
+              </motion.a>
             ))}
           </ul>
         </div>
