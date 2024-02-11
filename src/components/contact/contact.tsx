@@ -98,7 +98,9 @@ const Contact = (props: Props) => {
           </a>
         </div>
         <div className="contact_form-container">
-          <h2>Contact Form</h2>
+          <h2>
+            {props.language === "en" ? "Contact Form" : "Kontaktní formulář"}
+          </h2>
           <form onSubmit={handleSubmit}>
             <label> {props.language === "en" ? "Name" : "Jméno"}</label>
             <input

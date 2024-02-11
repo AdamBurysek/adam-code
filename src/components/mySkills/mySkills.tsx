@@ -38,7 +38,7 @@ const MySkills = (props: Props) => {
       url: "https://www.adobe.com/cz/products/photoshop.html",
     },
     {
-      name: "React",
+      name: "React.js",
       url: "https://www.react.dev",
     },
     {
@@ -46,7 +46,7 @@ const MySkills = (props: Props) => {
       url: "https://reactnative.dev",
     },
     {
-      name: "Next",
+      name: "Next.js",
       url: "https://nextjs.org/",
     },
     {
