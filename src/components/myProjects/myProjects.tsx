@@ -46,7 +46,7 @@ const MyProjects = (props: Props) => {
                   key={index}
                   animate={isInView ? "show" : "hide"}
                   transition={{
-                    duration: Math.min(10, 1 * index),
+                    duration: Math.min(10, 1 + index),
                     type: "spring",
                   }}
                   variants={variants}
