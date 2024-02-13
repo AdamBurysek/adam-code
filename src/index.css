@@ -21,6 +21,9 @@ body {
   background-color: #000000d9;
   font-family: "SF-Pro", sans-serif;
   min-width: 320px;
+  overscroll-behavior: none;
+  -ms-scroll-chaining: none;
+  overflow-y: scroll;
 }
 
 body a {

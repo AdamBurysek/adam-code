@@ -1,16 +1,30 @@
 import "./loading.css";
 
-const Loading = () => {
+type Props = {
+  loaded: boolean;
+};
+
+const Loading = (props: Props) => {
   return (
-    <div className="loading_container">
-      <div className="loading_loader">
+    <div
+      className={
+        props.loaded
+          ? "loading_container loading_container-hide"
+          : "loading_container"
+      }
+    >
+      <div
+        className={
+          props.loaded ? "loading_loader loading_loader-hide" : "loading_loader"
+        }
+      >
         <span></span>
         <span></span>
         <span></span>
         <span></span>
       </div>
       <div className="loading_text-container">
-        <p className="loading_text">Loading...</p>
+        <p className="loading_text">{props.loaded ? "" : "Loading..."}</p>
       </div>
     </div>
   );

@@ -21,11 +21,13 @@ function App() {
 
   return (
     <>
-      <MainPage
-        handleLanguageButtonClick={handleLanguageButtonClick}
-        language={language}
-        projects={projects}
-      />
+      <div className="scrollbar-container">
+        <MainPage
+          handleLanguageButtonClick={handleLanguageButtonClick}
+          language={language}
+          projects={projects}
+        />
+      </div>
     </>
   );
 }

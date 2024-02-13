@@ -5,7 +5,8 @@ export const withLoading = <P extends object>(
   WrappedComponent: React.ComponentType<P>
 ) => {
   const WithLoading: React.FC<P> = (props) => {
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState<boolean>(true);
+    const [startAnimation, setStartAnimation] = useState<boolean>(false);
 
     useEffect(() => {
       const images = document.querySelectorAll("img");
@@ -30,7 +31,10 @@ export const withLoading = <P extends object>(
       });
 
       Promise.all([...imageLoadPromises, fontLoadPromise]).then(() => {
-        setLoading(false);
+        setStartAnimation(true);
+        setTimeout(() => {
+          setLoading(false);
+        }, 2000);
       });
 
       return () => {
@@ -42,7 +46,7 @@ export const withLoading = <P extends object>(
 
     return (
       <div>
-        {loading ? <Loading /> : null}
+        {loading ? <Loading loaded={startAnimation} /> : null}
         <div className={loading ? "hide-content" : ""}>
           <WrappedComponent {...props} />
         </div>
