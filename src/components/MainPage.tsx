@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { useState } from "react";
 import { withLoading } from "../hooks/withLoading";
 import Hero from "./hero/hero";
