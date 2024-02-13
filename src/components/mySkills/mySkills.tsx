@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import "./mySkills.css";
 import { useInView, motion } from "framer-motion";
 
@@ -8,12 +8,15 @@ type Props = {
 
 const MySkills = (props: Props) => {
   const contentRef = useRef(null);
+  const tableRef: React.MutableRefObject<HTMLUListElement | null> =
+    useRef(null);
   const isInView = useInView(contentRef, { once: true });
 
   const variants = {
     show: { x: 0 },
     hide: { x: 100000 },
   };
+
   const skillz = [
     { name: "HTML", url: "https://en.wikipedia.org/wiki/HTML" },
     { name: "CSS", url: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
@@ -119,13 +122,23 @@ const MySkills = (props: Props) => {
     },
   ];
 
+  useEffect(() => {
+    const countTableRows = () => {
+      const rows = Math.ceil(skillz.length / 3);
+      if (tableRef.current) {
+        tableRef.current.style.setProperty("--rows", String(rows));
+      }
+    };
+    countTableRows();
+  }, [skillz.length]);
+
   return (
     <section id="my-skills" className="my-skills">
       <div className="section-line" />
       <div className="section-content">
         <h1>{props.language === "en" ? "My Skills" : "Moje dovednosti"}</h1>
         <div className="my-skills_content" ref={contentRef}>
-          <ul>
+          <ul ref={tableRef}>
             {skillz.map((skill, index) => (
               <motion.a
                 animate={isInView ? "show" : "hide"}

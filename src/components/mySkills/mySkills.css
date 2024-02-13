@@ -2,12 +2,12 @@
   display: flex;
   justify-content: center;
   margin-bottom: 40px;
+  margin-left: 100px;
 }
 
 .my-skills_content ul {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
+  display: grid;
+  grid-auto-flow: row;
   column-gap: 100px;
   list-style-type: none;
   padding: 0;
@@ -15,10 +15,13 @@
 
 @media screen and (min-width: 870px) {
   .my-skills_content {
-    padding-right: 300px;
+    padding-right: 40px;
+    margin-left: 0;
   }
   .my-skills_content ul {
-    max-height: 400px;
+    --rows: 0;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(var(--rows), 1fr);
   }
 }
 
