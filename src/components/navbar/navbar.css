@@ -47,7 +47,7 @@
 .navbar_logo p {
   margin: 5px 0;
   padding-left: 15px;
-  font-size: 25px;
+  font-size: 1.5625rem;
   font-weight: 500;
 }
 
@@ -77,14 +77,14 @@
     padding-left: 40px;
   }
   .navbar_links li {
-    font-size: 16px;
+    font-size: 1rem;
     padding: 0 15px 0 0;
   }
 }
 
 .navbar_links button {
   background-color: transparent;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-family: "SF-Pro";
   font-weight: 200;
   border: none;
@@ -156,6 +156,6 @@
 @media screen and (max-width: 400px) {
   .navbar_logo p {
     margin: 8px 0;
-    font-size: 22px;
+    font-size: 1.375rem;
   }
 }

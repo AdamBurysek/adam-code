@@ -32,7 +32,7 @@ body a {
 
 h1 {
   color: var(--color-white);
-  font-size: 48px;
+  font-size: 3rem;
   font-weight: 510;
   text-align: center;
   margin: 30px 0;
@@ -46,7 +46,7 @@ h1 {
 
 h2 {
   color: var(--color-white);
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: 200;
   text-align: center;
   margin-top: 30px;
@@ -56,15 +56,15 @@ h2 {
 p {
   font-weight: 100;
   color: var(--color-white);
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 @media screen and (min-width: 440px) {
   h1 {
-    font-size: 64px;
+    font-size: 4rem;
   }
   p {
-    font-size: 24px;
+    font-size: 1.5rem;
   }
 }
 

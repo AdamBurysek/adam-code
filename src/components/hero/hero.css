@@ -31,7 +31,7 @@
 .parallax-text {
   display: none;
   position: absolute;
-  font-size: 100px;
+  font-size: 6.25rem;
   font-weight: 200;
   right: 35%;
   bottom: 550px;
