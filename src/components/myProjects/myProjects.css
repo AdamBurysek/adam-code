@@ -48,7 +48,7 @@
 
 @media screen and (max-width: 340px) {
   .card_container {
-    margin: 10px 0px;
+    width: 310px;
   }
 }
 
@@ -178,8 +178,8 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
   text-align: center;
   transition: transform 0.7s ease-out;
 }
