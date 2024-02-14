@@ -11,7 +11,7 @@ function App() {
 
   useEffect(() => {
     mongoDataService.getProjects().then((response: AxiosResponse) => {
-      setProjects(JSON.parse(JSON.stringify(response.data)));
+      setProjects(response.data);
     });
   }, []);
 
