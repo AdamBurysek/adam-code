@@ -53,7 +53,7 @@ const MySkills = (props: Props) => {
       url: "https://nextjs.org/",
     },
     {
-      name: "Electron",
+      name: "Electron.js",
       url: "https://www.electronjs.org",
     },
     {

@@ -40,7 +40,13 @@ const MyProjects = (props: Props) => {
           {props.projects.length > 0 ? (
             props.projects
               .slice()
-              .reverse()
+              .sort((a: Projects, b: Projects) => {
+                // Ensure type safety and handle potential invalid ratings
+                const aRating = Number(a.rating) || 0;
+                const bRating = Number(b.rating) || 0;
+
+                return bRating - aRating;
+              })
               .map((card: Projects, index) => (
                 <motion.span
                   key={index}

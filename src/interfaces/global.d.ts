@@ -22,6 +22,7 @@ export type Projects = {
   gitUrl: string;
   frontImage: string;
   backImage: string;
+  rating: string;
 };
 
 export type CardProps = {
