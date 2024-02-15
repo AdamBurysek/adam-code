@@ -13,7 +13,7 @@ type Props = {
   projects: Projects[] | [];
 };
 
-function MainPage(props: Props) {
+const MainPage = (props: Props) => {
   const [language, setLanguage] = useState<string>("en");
   const [menuOpened, setMenuOpened] = useState<boolean>(false);
 
@@ -46,6 +46,6 @@ function MainPage(props: Props) {
       </div>
     </>
   );
-}
+};
 
 export default MainPage;
