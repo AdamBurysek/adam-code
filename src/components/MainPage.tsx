@@ -7,24 +7,29 @@ import MyProjects from "./myProjects/myProjects";
 import Contact from "./contact/contact";
 import Footer from "./footer/footer";
 import { Projects } from "../interfaces/global";
+import { changeLanguage } from "../utils/changeLanguage";
 
 type Props = {
-  handleLanguageButtonClick: () => void;
-  language: string;
   projects: Projects[] | [];
 };
 
 function MainPage(props: Props) {
+  const [language, setLanguage] = useState<string>("en");
   const [menuOpened, setMenuOpened] = useState<boolean>(false);
+
   const handleHamburgerButtonClick = () => {
     setMenuOpened(!menuOpened);
+  };
+
+  const handleLanguageButtonClick = () => {
+    setLanguage(changeLanguage(language));
   };
 
   return (
     <>
       <Navbar
-        language={props.language}
-        handleLanguageButtonClick={props.handleLanguageButtonClick}
+        language={language}
+        handleLanguageButtonClick={handleLanguageButtonClick}
         handleHamburgerButtonClick={handleHamburgerButtonClick}
         menuOpened={menuOpened}
         setMenuOpened={setMenuOpened}
@@ -32,10 +37,10 @@ function MainPage(props: Props) {
       <div className={menuOpened ? "page-content blur" : "page-content"}>
         <div className="container">
           <Hero />
-          <AboutMe language={props.language} />
-          <MySkills language={props.language} />
-          <MyProjects projects={props.projects} language={props.language} />
-          <Contact language={props.language} />
+          <AboutMe language={language} />
+          <MySkills language={language} />
+          <MyProjects projects={props.projects} language={language} />
+          <Contact language={language} />
         </div>
         <Footer />
       </div>

@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { changeLanguage } from "./utils/changeLanguage";
 import MainPage from "./components/MainPage";
 import mongoDataService from "./services/mongoDataService";
 import { AxiosResponse } from "axios";
@@ -7,7 +6,6 @@ import { Projects } from "./interfaces/global";
 import Loading from "./components/loading/loading";
 
 function App() {
-  const [language, setLanguage] = useState<string>("en");
   const [loading, setLoading] = useState<boolean>(true);
   const [startAnimation, setStartAnimation] = useState<boolean>(false);
   const [projects, setProjects] = useState<Projects[] | []>([]);
@@ -15,7 +13,6 @@ function App() {
   useEffect(() => {
     mongoDataService.getProjects().then((response: AxiosResponse) => {
       setProjects(response.data);
-      console.log(response.data);
     });
   }, []);
 
@@ -23,8 +20,6 @@ function App() {
     if (projects.length !== 0) {
       const images = document.querySelectorAll("img");
       const fonts = document.fonts;
-
-      console.log(images);
 
       const handleLoad = () => {
         setLoading(false);
@@ -59,19 +54,11 @@ function App() {
     }
   }, [projects]);
 
-  const handleLanguageButtonClick = () => {
-    setLanguage(changeLanguage(language));
-  };
-
   return (
     <>
       {loading ? <Loading loaded={startAnimation} /> : null}
       <div className={loading ? "hide-content" : ""}>
-        <MainPage
-          handleLanguageButtonClick={handleLanguageButtonClick}
-          language={language}
-          projects={projects}
-        />
+        <MainPage projects={projects} />
       </div>
     </>
   );
