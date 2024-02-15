@@ -13,47 +13,51 @@ function App() {
   const [projects, setProjects] = useState<Projects[] | []>([]);
 
   useEffect(() => {
-    const images = document.querySelectorAll("img");
-    const fonts = document.fonts;
-
-    const handleLoad = () => {
-      setLoading(false);
-    };
-
-    const imageLoadPromises = Array.from(images).map((image) => {
-      if (image.complete) {
-        return Promise.resolve();
-      } else {
-        return new Promise((resolve) => {
-          image.addEventListener("load", resolve);
-        });
-      }
+    mongoDataService.getProjects().then((response: AxiosResponse) => {
+      setProjects(response.data);
+      console.log(response.data);
     });
-
-    const fontLoadPromise = fonts.ready.then(() => {
-      return Promise.resolve();
-    });
-
-    Promise.all([
-      mongoDataService.getProjects().then((response: AxiosResponse) => {
-        setProjects(response.data);
-        return Promise.resolve();
-      }),
-      ...imageLoadPromises,
-      fontLoadPromise,
-    ]).then(() => {
-      setStartAnimation(true);
-      setTimeout(() => {
-        setLoading(false);
-      }, 2000);
-    });
-
-    return () => {
-      images.forEach((image) => {
-        image.removeEventListener("load", handleLoad);
-      });
-    };
   }, []);
+
+  useEffect(() => {
+    if (projects.length !== 0) {
+      const images = document.querySelectorAll("img");
+      const fonts = document.fonts;
+
+      console.log(images);
+
+      const handleLoad = () => {
+        setLoading(false);
+      };
+
+      const imageLoadPromises = Array.from(images).map((image) => {
+        if (image.complete) {
+          return Promise.resolve();
+        } else {
+          return new Promise((resolve) => {
+            image.addEventListener("load", resolve);
+          });
+        }
+      });
+
+      const fontLoadPromise = fonts.ready.then(() => {
+        return Promise.resolve();
+      });
+
+      Promise.all([...imageLoadPromises, fontLoadPromise]).then(() => {
+        setStartAnimation(true);
+        setTimeout(() => {
+          setLoading(false);
+        }, 2000);
+      });
+
+      return () => {
+        images.forEach((image) => {
+          image.removeEventListener("load", handleLoad);
+        });
+      };
+    }
+  }, [projects]);
 
   const handleLanguageButtonClick = () => {
     setLanguage(changeLanguage(language));
