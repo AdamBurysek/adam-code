@@ -65,15 +65,13 @@ function App() {
 
   return (
     <>
-      <div className="scrollbar-container">
-        {loading ? <Loading loaded={startAnimation} /> : null}
-        <div className={loading ? "hide-content" : ""}>
-          <MainPage
-            handleLanguageButtonClick={handleLanguageButtonClick}
-            language={language}
-            projects={projects}
-          />
-        </div>
+      {loading ? <Loading loaded={startAnimation} /> : null}
+      <div className={loading ? "hide-content" : ""}>
+        <MainPage
+          handleLanguageButtonClick={handleLanguageButtonClick}
+          language={language}
+          projects={projects}
+        />
       </div>
     </>
   );
