@@ -1,6 +1,4 @@
-/* eslint-disable react-refresh/only-export-components */
 import { useState } from "react";
-import { withLoading } from "../hooks/withLoading";
 import Hero from "./hero/hero";
 import Navbar from "./navbar/navbar";
 import AboutMe from "./aboutMe/aboutMe";
@@ -45,4 +43,4 @@ function MainPage(props: Props) {
   );
 }
 
-export default withLoading(MainPage);
+export default MainPage;
