@@ -23,6 +23,7 @@ const Hero = () => {
   const pinkMountains = useTransform(scrollYProgress, [0, 1], ["0%", "120%"]);
   const redMountains = useTransform(scrollYProgress, [0, 1], ["0%", "110%"]);
   const purpleMountains = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+
   return (
     <section id="home" ref={heroRef}>
       <div className="hero_img-container">
