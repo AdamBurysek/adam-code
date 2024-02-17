@@ -29,23 +29,29 @@ const Hero = () => {
         <motion.img
           src={Background}
           className="hero_background"
-          style={{ y: background, translateY: "-80px", zIndex: 0 }}
+          style={{ y: background }}
         />
         <HeroText scrollYProgress={scrollYProgress} />
         <motion.img
+          className="orange-mountains"
           src={OrangeMountains}
-          style={{ y: orangeMountains, translateY: "30px" }}
+          style={{ y: orangeMountains }}
         />
         <motion.img
+          className="pink-mountains"
           src={PinkMountains}
-          style={{ y: pinkMountains, translateY: "20px" }}
-          className="instet"
+          style={{ y: pinkMountains }}
         />
         <motion.img
+          className="red-mountains"
           src={RedMountains}
-          style={{ y: redMountains, translateY: "10px" }}
+          style={{ y: redMountains }}
         />
-        <motion.img src={PurpleMountains} style={{ y: purpleMountains }} />
+        <motion.img
+          className="purple-mountains"
+          src={PurpleMountains}
+          style={{ y: purpleMountains }}
+        />
         <motion.img src={ClosestMountain} />
       </div>
     </section>

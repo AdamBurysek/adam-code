@@ -55,4 +55,36 @@
   width: 1920px;
   height: 100%;
   max-height: 2800px;
+  z-index: 0;
+  translate: 0 -80px;
+}
+
+.orange-mountains {
+  translate: 0 30px;
+}
+
+.pink-mountains {
+  translate: 0 20px;
+}
+
+.red-mountains {
+  translate: 0 10px;
+}
+
+@media screen and (max-height: 780px) {
+  .orange-mountains {
+    translate: 0 200px;
+  }
+
+  .pink-mountains {
+    translate: 0 190px;
+  }
+
+  .red-mountains {
+    translate: 0 170px;
+  }
+
+  .purple-mountains {
+    translate: 0 170px;
+  }
 }
