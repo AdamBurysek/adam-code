@@ -24,26 +24,6 @@
   cursor: pointer;
 }
 
-.navbar_logo:hover > p {
-  color: var(--color-link-hover);
-}
-
-.navbar_logo:hover > svg > path {
-  animation: colorChange 10s ease-in-out infinite;
-}
-
-@keyframes colorChange {
-  0% {
-    fill: white;
-  }
-  5% {
-    fill: var(--color-link-hover);
-  }
-  10% {
-    fill: white;
-  }
-}
-
 .navbar_logo p {
   margin: 5px 0;
   padding-left: 15px;
