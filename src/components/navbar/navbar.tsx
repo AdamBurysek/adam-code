@@ -1,6 +1,7 @@
 import PageLogo from "./pageLogo";
 import NavbarLinks from "./navbarLInks";
 import HamburgerButton from "./hamburgerButton";
+import { ReactLenis, useLenis } from "@studio-freight/react-lenis";
 import "./navbar.css";
 
 type Props = {
@@ -12,6 +13,8 @@ type Props = {
 };
 
 const Navbar = (props: Props) => {
+  const lenis = useLenis(() => {});
+
   function handleNavLinkButtonClick(
     e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>
   ) {
@@ -19,32 +22,31 @@ const Navbar = (props: Props) => {
     const navHeight = 70;
     const targetId = e.currentTarget.getAttribute("data-target");
     const section = document.getElementById(targetId || "");
-    if (section) {
+    if (section && lenis) {
       const position = section.offsetTop - navHeight;
-      window.scrollTo({
-        left: 0,
-        top: position,
-      });
+      lenis.scrollTo(position);
     }
   }
 
   return (
-    <nav className={props.menuOpened ? "navbar navbar_menu-open" : "navbar"}>
-      <div className="container">
-        <HamburgerButton
-          handleHamburgerButtonClick={props.handleHamburgerButtonClick}
-          menuOpened={props.menuOpened}
-        />
-        <PageLogo handleNavLinkButtonClick={handleNavLinkButtonClick} />
-        <NavbarLinks
-          language={props.language}
-          handleLanguageButtonClick={props.handleLanguageButtonClick}
-          menuOpened={props.menuOpened}
-          setMenuOpened={props.setMenuOpened}
-          handleNavLinkButtonClick={handleNavLinkButtonClick}
-        />
-      </div>
-    </nav>
+    <ReactLenis root>
+      <nav className={props.menuOpened ? "navbar navbar_menu-open" : "navbar"}>
+        <div className="container">
+          <HamburgerButton
+            handleHamburgerButtonClick={props.handleHamburgerButtonClick}
+            menuOpened={props.menuOpened}
+          />
+          <PageLogo handleNavLinkButtonClick={handleNavLinkButtonClick} />
+          <NavbarLinks
+            language={props.language}
+            handleLanguageButtonClick={props.handleLanguageButtonClick}
+            menuOpened={props.menuOpened}
+            setMenuOpened={props.setMenuOpened}
+            handleNavLinkButtonClick={handleNavLinkButtonClick}
+          />
+        </div>
+      </nav>
+    </ReactLenis>
   );
 };
 

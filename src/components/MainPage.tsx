@@ -34,6 +34,7 @@ const MainPage = (props: Props) => {
         menuOpened={menuOpened}
         setMenuOpened={setMenuOpened}
       />
+
       <div className={menuOpened ? "page-content blur" : "page-content"}>
         <div className="container">
           <Hero />
