@@ -90,7 +90,7 @@ const MyProjects = (props: Props) => {
             className="project_button show-more_button"
             onClick={handleShowAllProjectsButtonClick}
           >
-            Show Older Projects
+            Show More Projects
           </button>
         )}
 
@@ -99,7 +99,7 @@ const MyProjects = (props: Props) => {
             className="project_button show-more_button"
             onClick={handleShowAllProjectsButtonClick}
           >
-            Ukaž starší projekty
+            Ukaž další projekty
           </button>
         )}
       </div>
