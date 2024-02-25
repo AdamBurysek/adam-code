@@ -1,7 +1,7 @@
+import { ReactLenis, useLenis } from "@studio-freight/react-lenis";
 import PageLogo from "./pageLogo";
 import NavbarLinks from "./navbarLInks";
 import HamburgerButton from "./hamburgerButton";
-import { ReactLenis, useLenis } from "@studio-freight/react-lenis";
 import "./navbar.css";
 
 type Props = {
