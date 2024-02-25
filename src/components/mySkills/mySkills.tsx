@@ -33,6 +33,10 @@ const MySkills = (props: Props) => {
       url: "https://github.com",
     },
     {
+      name: "Docker",
+      url: "https://www.docker.com/",
+    },
+    {
       name: "Figma",
       url: "https://figma.com",
     },
@@ -41,12 +45,12 @@ const MySkills = (props: Props) => {
       url: "https://www.adobe.com/cz/products/photoshop.html",
     },
     {
-      name: "React.js",
-      url: "https://www.react.dev",
+      name: "Procreate",
+      url: "https://procreate.com/",
     },
     {
-      name: "React Native",
-      url: "https://reactnative.dev",
+      name: "React.js",
+      url: "https://www.react.dev",
     },
     {
       name: "Next.js",
@@ -55,6 +59,10 @@ const MySkills = (props: Props) => {
     {
       name: "Electron.js",
       url: "https://www.electronjs.org",
+    },
+    {
+      name: "React Native",
+      url: "https://reactnative.dev",
     },
     {
       name: "Bootstrap",
