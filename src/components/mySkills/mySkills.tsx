@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
-import "./mySkills.css";
 import { useInView, motion } from "framer-motion";
 import { skills } from "./skillsArray";
+import "./mySkills.css";
 
 type Props = {
   language: string;
