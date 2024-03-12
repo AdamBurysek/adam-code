@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
-import { useInView, motion } from "framer-motion";
 import { skills } from "./skillsArray";
+
 import "./mySkills.css";
 
 type Props = {
@@ -11,12 +11,6 @@ const MySkills = (props: Props) => {
   const contentRef = useRef(null);
   const tableRef: React.MutableRefObject<HTMLUListElement | null> =
     useRef(null);
-  const isInView = useInView(contentRef, { once: true });
-
-  const variants = {
-    show: { x: 0 },
-    hide: { x: 100000 },
-  };
 
   useEffect(() => {
     const countTableRows = () => {
@@ -36,16 +30,9 @@ const MySkills = (props: Props) => {
         <div className="my-skills_content" ref={contentRef}>
           <ul ref={tableRef}>
             {skills.map((skill, index) => (
-              <motion.a
-                animate={isInView ? "show" : "hide"}
-                transition={{ duration: 0.3 * index }}
-                variants={variants}
-                href={skill.url}
-                target="blank"
-                key={index}
-              >
+              <a href={skill.url} target="blank" key={index}>
                 <li>{skill.name}</li>
-              </motion.a>
+              </a>
             ))}
           </ul>
         </div>

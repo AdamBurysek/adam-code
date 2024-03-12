@@ -1,9 +1,9 @@
-import Card from "./card";
 import { useRef, useState } from "react";
-import "./myProjects.css";
-import { Projects } from "../../interfaces/global";
-import { useInView, motion } from "framer-motion";
+import Card from "./card";
 import { GitHubIcon } from "../../assets/icons";
+import { Projects } from "../../interfaces/global";
+
+import "./myProjects.css";
 
 // Cards are from older project
 
@@ -15,12 +15,6 @@ type Props = {
 const MyProjects = (props: Props) => {
   const [showAllProjects, setShowAllProjects] = useState(false);
   const contentRef = useRef(null);
-  const isInView = useInView(contentRef, { once: true });
-
-  const variants = {
-    show: { x: 0 },
-    hide: { x: 1000 },
-  };
 
   function handleShowAllProjectsButtonClick() {
     setShowAllProjects(!showAllProjects);
@@ -41,41 +35,29 @@ const MyProjects = (props: Props) => {
             props.projects
               .slice()
               .sort((a: Projects, b: Projects) => {
-                // Ensure type safety and handle potential invalid ratings
                 const aRating = Number(a.rating) || 0;
                 const bRating = Number(b.rating) || 0;
-
                 return bRating - aRating;
               })
-              .map((card: Projects, index) => (
-                <motion.span
-                  key={index}
-                  animate={isInView ? "show" : "hide"}
-                  transition={{
-                    duration: Math.min(10, 1 + index),
-                    type: "spring",
-                  }}
-                  variants={variants}
-                >
-                  <Card
-                    darkMode={"dark"}
-                    language={props.language}
-                    title_en={card.title.en}
-                    title_cz={card.title.cz}
-                    desc_en={card.description.en}
-                    desc_cz={card.description.cz}
-                    frontend={card.frontend}
-                    backend={card.backend}
-                    date_en={card.date.en}
-                    date_cz={card.date.cz}
-                    about_en={card.about.en}
-                    about_cz={card.about.cz}
-                    image={card.frontImage}
-                    image_back={card.backImage}
-                    web_url={card.webUrl}
-                    git_url={card.gitUrl}
-                  />
-                </motion.span>
+              .map((card: Projects) => (
+                <Card
+                  darkMode={"dark"}
+                  language={props.language}
+                  title_en={card.title.en}
+                  title_cz={card.title.cz}
+                  desc_en={card.description.en}
+                  desc_cz={card.description.cz}
+                  frontend={card.frontend}
+                  backend={card.backend}
+                  date_en={card.date.en}
+                  date_cz={card.date.cz}
+                  about_en={card.about.en}
+                  about_cz={card.about.cz}
+                  image={card.frontImage}
+                  image_back={card.backImage}
+                  web_url={card.webUrl}
+                  git_url={card.gitUrl}
+                />
               ))
           ) : (
             <div style={{ height: "60vh", padding: "100px", color: "white" }}>

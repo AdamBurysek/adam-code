@@ -8,14 +8,10 @@ interface HeroTextProps {
 const HeroText: React.FC<HeroTextProps> = ({ scrollYProgress }) => {
   const [hideHeaderText, setHideHeaderText] = useState<boolean>(false);
 
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    if (latest !== 0) {
-      setHideHeaderText(true);
-    }
-    if (latest === 0) {
-      setHideHeaderText(false);
-    }
-  });
+  useMotionValueEvent(scrollYProgress, "change", (latest) =>
+    setHideHeaderText(latest !== 0)
+  );
+
   return (
     <motion.p
       className={
