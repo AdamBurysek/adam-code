@@ -66,39 +66,42 @@ const MyProjects = (props: Props) => {
           )}
         </div>
       </section>
-      <div className="show-more_button-container">
-        {props.language === "en" && !showAllProjects && (
-          <button
-            className="project_button show-more_button"
-            onClick={handleShowAllProjectsButtonClick}
+      {showAllProjects ? (
+        <div className="github-link-container">
+          <a
+            className="github-button-link"
+            href="https://github.com/AdamBurysek"
+            target="blank"
           >
-            Show More Projects
-          </button>
-        )}
+            <GitHubIcon width="120" height="120" />
+          </a>
+          <p className="github-link-text">
+            {props.language === "en"
+              ? "You can find more of my projects on my GitHub."
+              : "Na GitHubu najdete i pár dalších mých zajímavých projektů."}
+          </p>
+        </div>
+      ) : (
+        <div className="show-more_button-container">
+          {props.language === "en" && !showAllProjects && (
+            <button
+              className="project_button show-more_button"
+              onClick={handleShowAllProjectsButtonClick}
+            >
+              Show More Projects
+            </button>
+          )}
 
-        {props.language !== "en" && !showAllProjects && (
-          <button
-            className="project_button show-more_button"
-            onClick={handleShowAllProjectsButtonClick}
-          >
-            Ukaž další projekty
-          </button>
-        )}
-      </div>
-      <div className="github-link-container">
-        <a
-          className="github-button-link"
-          href="https://github.com/AdamBurysek"
-          target="blank"
-        >
-          <GitHubIcon width="120" height="120" />
-        </a>
-        <p className="github-link-text">
-          {props.language === "en"
-            ? "You can find more of my projects on my GitHub."
-            : "Na GitHubu najdete i pár dalších mých zajímavých projektů."}
-        </p>
-      </div>
+          {props.language !== "en" && !showAllProjects && (
+            <button
+              className="project_button show-more_button"
+              onClick={handleShowAllProjectsButtonClick}
+            >
+              Ukaž další projekty
+            </button>
+          )}
+        </div>
+      )}
     </>
   );
 };

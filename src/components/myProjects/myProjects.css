@@ -244,6 +244,7 @@
 .show-more_button-container {
   display: flex;
   justify-content: center;
+  margin-bottom: 80px;
 }
 
 .github-link-container {
