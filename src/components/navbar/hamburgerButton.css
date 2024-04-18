@@ -7,7 +7,7 @@
   top: 15px;
 }
 
-@media screen and (min-width: 880px) {
+@media screen and (min-width: 920px) {
   .hamburger {
     display: none;
   }

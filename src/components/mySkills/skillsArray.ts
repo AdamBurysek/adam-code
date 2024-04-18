@@ -30,6 +30,10 @@ export const skills = [
     url: "https://procreate.com/",
   },
   {
+    name: "WebGL",
+    url: "https://webglfundamentals.org/",
+  },
+  {
     name: "React.js",
     url: "https://www.react.dev",
   },
@@ -58,7 +62,7 @@ export const skills = [
     url: "https://mantine.dev/",
   },
   {
-    name: "Jest",
+    name: "Jest / Vitest",
     url: "https://jestjs.io",
   },
   {

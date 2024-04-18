@@ -48,7 +48,7 @@
   padding: 15px 0;
 }
 
-@media screen and (min-width: 880px) {
+@media screen and (min-width: 920px) {
   .navbar_links {
     flex-direction: row;
     justify-content: flex-end;

@@ -31,13 +31,22 @@
 .parallax-text {
   display: none;
   position: absolute;
-  font-size: 6.25rem;
-  font-weight: 200;
   right: 35%;
-  bottom: 550px;
+  bottom: 658px;
   color: var(--color-white);
   z-index: 2;
   transition: all 2s;
+}
+
+.parallax-paragraph {
+  font-size: 5.25rem;
+  letter-spacing: -3px;
+  font-weight: 200;
+  margin-bottom: 0;
+}
+
+.parallax-small_paragraph {
+  margin: 0;
 }
 
 .parallax-text_hide {

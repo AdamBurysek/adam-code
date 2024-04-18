@@ -37,7 +37,7 @@ const MainPage = (props: Props) => {
 
       <div className={menuOpened ? "page-content blur" : "page-content"}>
         <div className="container">
-          <Hero />
+          <Hero language={language} />
           <AboutMe language={language} />
           <MySkills language={language} />
           <MyProjects projects={props.projects} language={language} />

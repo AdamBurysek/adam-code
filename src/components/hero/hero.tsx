@@ -10,7 +10,11 @@ import ClosestMountain from "../../images/heroParallax/closestMountain.webp";
 import HeroText from "./heroText";
 import "./hero.css";
 
-const Hero = () => {
+type Props = {
+  language: string;
+};
+
+const Hero = (props: Props) => {
   const heroRef = useRef(null);
 
   const { scrollYProgress } = useScroll({
@@ -32,7 +36,7 @@ const Hero = () => {
           className="hero_background"
           style={{ y: background }}
         />
-        <HeroText scrollYProgress={scrollYProgress} />
+        <HeroText scrollYProgress={scrollYProgress} language={props.language} />
         <motion.img
           className="orange-mountains"
           src={OrangeMountains}
